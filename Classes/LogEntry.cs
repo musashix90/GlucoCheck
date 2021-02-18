@@ -14,6 +14,8 @@ namespace GlucoCheck.Classes
 
             set
             {
+                //Flawed code!!!
+                //Causes infinite recursion!
                 LogDate = value;
 
                 EasyTime = LogDate.ToString("hh:mmtt").ToLower();
@@ -45,6 +47,8 @@ namespace GlucoCheck.Classes
 
             set
             {
+                //Flawed code!!!
+                //Causes infinite recursion!
                 PostBSL = value;
                 BSLDelta = Math.Abs(BSL - PostBSL);
             }
