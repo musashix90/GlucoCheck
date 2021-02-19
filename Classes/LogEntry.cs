@@ -1,10 +1,15 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace GlucoCheck.Classes
 {
+    [Table("entry_log")]
     public class LogEntry
     {
         #region Properties
+        [Key]
+        public long Id { get; set; }
 
         //Note: The EntryDate property needs to store its value in another 
         //(private) variable to avoid infinite recursion. In this case, I name
@@ -26,7 +31,7 @@ namespace GlucoCheck.Classes
         /// </summary>
         public string EasyTime { get; private set; }
 
-
+        [Required]
         public int BSL { get; set; }
         public int Carbs { get; set; }
         public float InsulinDosed { get; set; }
@@ -35,6 +40,7 @@ namespace GlucoCheck.Classes
 
         #region Property get/set functions
 
+        [Required]
         public DateTime EntryDate
         {
             get { return M_EntryDate; }
