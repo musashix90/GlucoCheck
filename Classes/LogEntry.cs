@@ -6,78 +6,60 @@ namespace GlucoCheck.Classes
     {
         #region Properties
 
-        //DateTime related properties
-        //====================================================================================
-        public DateTime LogDate
-        {
-            get { return LogDate; }
-
-            set
-            {
-                //Flawed code!!!
-                //Causes infinite recursion!
-                LogDate = value;
-
-                EasyTime = LogDate.ToString("hh:mmtt").ToLower();
-                EasyYear = LogDate.ToString("MM/dd/yyyy");
-            }
-        }
+        //Note: The EntryDate property needs to store its value in another 
+        //(private) variable to avoid infinite recursion. In this case, I name
+        //these variables: M_PropertName. The "M" stands for mirror since it
+        //mirrors the value given to the public property.
+        private DateTime M_EntryDate { get; set; }
 
         /// <summary>
-        /// The time the entry was made, formatted as: hour:minute am/pm. For
-        /// example: 2:15pm. This value is automatically updated if the LogDate
-        /// property is changed.
+        /// The date of the log entry, formatted as: month/day/year (for 
+        /// example: 02/19/2021). This value is automatically updated when the
+        /// LogDate property is chanced.
+        /// </summary>
+        public string EasyDate { get; private set; }
+
+        /// <summary>
+        /// The time of the log entry, formatted as: hour:minute am/pm (for 
+        /// example: 2:34pm). This value is automatically updated when the
+        /// LogDate property is chanced.
         /// </summary>
         public string EasyTime { get; private set; }
 
-        /// <summary>
-        /// The date the entry was made, formatted as: month/day/year. For
-        /// example: 02/17/2021. This value is automatically updated if the 
-        /// LogDate property is changed.
-        /// </summary>
-        public string EasyYear { get; private set; }
 
-
-        //BSL related properties
-        //====================================================================================
         public int BSL { get; set; }
-        public int PostBSL
+        public int Carbs { get; set; }
+        public float InsulinDosed { get; set; }
+
+        #endregion
+
+        #region Property get/set functions
+
+        public DateTime EntryDate
         {
-            get { return PostBSL; }
+            get { return M_EntryDate; }
 
             set
             {
-                //Flawed code!!!
-                //Causes infinite recursion!
-                PostBSL = value;
-                BSLDelta = Math.Abs(BSL - PostBSL);
+                M_EntryDate = value;
+
+                EasyDate = M_EntryDate.ToString("MM/dd/yyyy");
+                EasyTime = M_EntryDate.ToString("hh:mmtt").ToLower();
             }
         }
-
-        /// <summary>
-        /// How much the BSL changed between the time eating and 2 hours after.
-        /// This value is automatically updated if the PostBSL property is
-        /// changed.
-        /// </summary>
-        public int BSLDelta { get; private set; }
-
-
-        //Other properties
-        //====================================================================================
-        public int Carbs { get; set; }
-        public float InsulinDosed { get; set; }
 
         #endregion
 
         #region Constructors
 
         /// <summary>
-        /// Initializes an empty (or "blank") LogEntry object. Only the LogDate
-        /// property is set, everything else is left as its default value.
+        /// Initializes an emptry (or "blank") LogEntry object. The LogDate 
+        /// property is automatically set to DateTime.Now when this constructor is
+        /// used (this property can be changed later).
         /// </summary>
         public LogEntry()
         {
-            this.LogDate = DateTime.Now;
+            this.EntryDate = DateTime.Now;
         }
 
         #endregion
