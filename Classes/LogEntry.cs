@@ -15,6 +15,7 @@ namespace GlucoCheck.Classes
         //(private) variable to avoid infinite recursion. In this case, I name
         //these variables: M_PropertName. The "M" stands for mirror since it
         //mirrors the value given to the public property.
+        [NotMapped]
         private DateTime M_EntryDate { get; set; }
 
         /// <summary>
@@ -22,6 +23,7 @@ namespace GlucoCheck.Classes
         /// example: 02/19/2021). This value is automatically updated when the
         /// LogDate property is chanced.
         /// </summary>
+        [NotMapped]
         public string EasyDate { get; private set; }
 
         /// <summary>
@@ -29,6 +31,7 @@ namespace GlucoCheck.Classes
         /// example: 2:34pm). This value is automatically updated when the
         /// LogDate property is chanced.
         /// </summary>
+        [NotMapped]
         public string EasyTime { get; private set; }
 
         [Required]

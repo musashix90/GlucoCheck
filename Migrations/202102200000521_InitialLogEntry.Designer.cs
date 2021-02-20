@@ -13,7 +13,7 @@ namespace GlucoCheck.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "202102192133231_InitialLogEntry"; }
+            get { return "202102200000521_InitialLogEntry"; }
         }
         
         string IMigrationMetadata.Source

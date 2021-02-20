@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using GlucoCheck.Forms;
+using System.Data.Entity;
+using GlucoCheck.Classes;
 
 namespace GlucoCheck
 {
@@ -15,6 +17,8 @@ namespace GlucoCheck
         [STAThread]
         static void Main()
         {
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<AppDbContext, GlucoCheck.Migrations.Configuration>(true));
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new FrmMain());
