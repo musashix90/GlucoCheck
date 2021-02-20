@@ -32,7 +32,7 @@ namespace GlucoCheck.Classes
         {
         }
 
-        public DbSet<LogEntry> log { get; set; }
+        public DbSet<LogEntry> Log { get; set; }
         #endregion
     }
 }
