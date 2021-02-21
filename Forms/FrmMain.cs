@@ -16,5 +16,10 @@ namespace GlucoCheck.Forms
         {
             InitializeComponent();
         }
+
+        private void FrmMain_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
