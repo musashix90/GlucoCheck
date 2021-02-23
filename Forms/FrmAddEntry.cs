@@ -46,6 +46,12 @@ namespace GlucoCheck.Forms
                     Carbs = Convert.ToInt32(TxtboxCarbs.Text),
                     InsulinDosed = Convert.ToInt32(TxtboxInsulin.Text)
                 };
+
+                using (var db = new AppDbContext())
+                {
+                    db.Log.Add(entry);
+                    db.SaveChanges();
+                }
             }
         }
 
