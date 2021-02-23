@@ -21,5 +21,11 @@ namespace GlucoCheck.Forms
         {
 
         }
+
+        private void BtnNewEntry_Click(object sender, EventArgs e)
+        {
+            Form addEntry = new FrmAddEntry();
+            addEntry.ShowDialog();
+        }
     }
 }
