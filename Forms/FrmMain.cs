@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using GlucoCheck.Classes;
 
 namespace GlucoCheck.Forms
 {
@@ -19,13 +20,25 @@ namespace GlucoCheck.Forms
 
         private void FrmMain_Load(object sender, EventArgs e)
         {
-
+            RefreshLastEntry();
         }
 
         private void BtnNewEntry_Click(object sender, EventArgs e)
         {
             Form addEntry = new FrmAddEntry();
             addEntry.ShowDialog();
+        }
+
+        private void RefreshLastEntry()
+        {
+            using (var db = new AppDbContext())
+            {
+                var lastEntry = db.Log.OrderByDescending(l => l.Id).Take(1).SingleOrDefault();
+                if (lastEntry != null)
+                {
+                    LblLastEntry.Text = lastEntry.BSL.ToString();
+                }
+            }
         }
     }
 }
