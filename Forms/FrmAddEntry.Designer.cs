@@ -30,84 +30,93 @@ namespace GlucoCheck.Forms
         private void InitializeComponent()
         {
             this.Lbl1 = new System.Windows.Forms.Label();
-            this.TxtboxBSL = new System.Windows.Forms.TextBox();
+            this.NumUpDownCurrentBSL = new System.Windows.Forms.NumericUpDown();
             this.Lbl2 = new System.Windows.Forms.Label();
-            this.TxtboxCarbs = new System.Windows.Forms.TextBox();
             this.Lbl3 = new System.Windows.Forms.Label();
-            this.TxtboxInsulin = new System.Windows.Forms.TextBox();
+            this.NumUpDownCarbs = new System.Windows.Forms.NumericUpDown();
+            this.NumUpDownInsulinDosed = new System.Windows.Forms.NumericUpDown();
             this.BtnAdd = new System.Windows.Forms.Button();
             this.BtnCancel = new System.Windows.Forms.Button();
-            this.LblWarningBSL = new System.Windows.Forms.Label();
-            this.LblWarningCarbs = new System.Windows.Forms.Label();
-            this.LblWarningInsulin = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.NumUpDownCurrentBSL)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NumUpDownCarbs)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NumUpDownInsulinDosed)).BeginInit();
             this.SuspendLayout();
             // 
             // Lbl1
             // 
             this.Lbl1.AutoSize = true;
-            this.Lbl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl1.Location = new System.Drawing.Point(17, 14);
+            this.Lbl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl1.Location = new System.Drawing.Point(12, 14);
             this.Lbl1.Name = "Lbl1";
-            this.Lbl1.Size = new System.Drawing.Size(81, 16);
+            this.Lbl1.Size = new System.Drawing.Size(101, 20);
             this.Lbl1.TabIndex = 0;
             this.Lbl1.Text = "Current BSL:";
             // 
-            // TxtboxBSL
+            // NumUpDownCurrentBSL
             // 
-            this.TxtboxBSL.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtboxBSL.Location = new System.Drawing.Point(20, 33);
-            this.TxtboxBSL.MaxLength = 3;
-            this.TxtboxBSL.Name = "TxtboxBSL";
-            this.TxtboxBSL.Size = new System.Drawing.Size(100, 22);
-            this.TxtboxBSL.TabIndex = 1;
-            this.TxtboxBSL.TextChanged += new System.EventHandler(this.TxtboxBSL_TextChanged);
+            this.NumUpDownCurrentBSL.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NumUpDownCurrentBSL.Location = new System.Drawing.Point(16, 37);
+            this.NumUpDownCurrentBSL.Maximum = new decimal(new int[] {
+            400,
+            0,
+            0,
+            0});
+            this.NumUpDownCurrentBSL.Name = "NumUpDownCurrentBSL";
+            this.NumUpDownCurrentBSL.Size = new System.Drawing.Size(154, 26);
+            this.NumUpDownCurrentBSL.TabIndex = 1;
             // 
             // Lbl2
             // 
             this.Lbl2.AutoSize = true;
-            this.Lbl2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl2.Location = new System.Drawing.Point(17, 96);
+            this.Lbl2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl2.Location = new System.Drawing.Point(12, 97);
             this.Lbl2.Name = "Lbl2";
-            this.Lbl2.Size = new System.Drawing.Size(47, 16);
+            this.Lbl2.Size = new System.Drawing.Size(55, 20);
             this.Lbl2.TabIndex = 2;
             this.Lbl2.Text = "Carbs:";
-            // 
-            // TxtboxCarbs
-            // 
-            this.TxtboxCarbs.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtboxCarbs.Location = new System.Drawing.Point(20, 115);
-            this.TxtboxCarbs.MaxLength = 3;
-            this.TxtboxCarbs.Name = "TxtboxCarbs";
-            this.TxtboxCarbs.Size = new System.Drawing.Size(100, 22);
-            this.TxtboxCarbs.TabIndex = 3;
-            this.TxtboxCarbs.TextChanged += new System.EventHandler(this.TxtboxCarbs_TextChanged);
             // 
             // Lbl3
             // 
             this.Lbl3.AutoSize = true;
-            this.Lbl3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl3.Location = new System.Drawing.Point(17, 178);
+            this.Lbl3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl3.Location = new System.Drawing.Point(12, 180);
             this.Lbl3.Name = "Lbl3";
-            this.Lbl3.Size = new System.Drawing.Size(90, 16);
-            this.Lbl3.TabIndex = 4;
+            this.Lbl3.Size = new System.Drawing.Size(107, 20);
+            this.Lbl3.TabIndex = 3;
             this.Lbl3.Text = "Insulin dosed:";
             // 
-            // TxtboxInsulin
+            // NumUpDownCarbs
             // 
-            this.TxtboxInsulin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtboxInsulin.Location = new System.Drawing.Point(20, 197);
-            this.TxtboxInsulin.MaxLength = 3;
-            this.TxtboxInsulin.Name = "TxtboxInsulin";
-            this.TxtboxInsulin.Size = new System.Drawing.Size(100, 22);
-            this.TxtboxInsulin.TabIndex = 5;
-            this.TxtboxInsulin.TextChanged += new System.EventHandler(this.TxtboxInsulin_TextChanged);
+            this.NumUpDownCarbs.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NumUpDownCarbs.Location = new System.Drawing.Point(16, 120);
+            this.NumUpDownCarbs.Maximum = new decimal(new int[] {
+            300,
+            0,
+            0,
+            0});
+            this.NumUpDownCarbs.Name = "NumUpDownCarbs";
+            this.NumUpDownCarbs.Size = new System.Drawing.Size(154, 26);
+            this.NumUpDownCarbs.TabIndex = 4;
+            // 
+            // NumUpDownInsulinDosed
+            // 
+            this.NumUpDownInsulinDosed.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NumUpDownInsulinDosed.Location = new System.Drawing.Point(16, 203);
+            this.NumUpDownInsulinDosed.Maximum = new decimal(new int[] {
+            30,
+            0,
+            0,
+            0});
+            this.NumUpDownInsulinDosed.Name = "NumUpDownInsulinDosed";
+            this.NumUpDownInsulinDosed.Size = new System.Drawing.Size(154, 26);
+            this.NumUpDownInsulinDosed.TabIndex = 5;
             // 
             // BtnAdd
             // 
             this.BtnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnAdd.Location = new System.Drawing.Point(20, 232);
+            this.BtnAdd.Location = new System.Drawing.Point(96, 235);
             this.BtnAdd.Name = "BtnAdd";
-            this.BtnAdd.Size = new System.Drawing.Size(100, 24);
+            this.BtnAdd.Size = new System.Drawing.Size(74, 23);
             this.BtnAdd.TabIndex = 6;
             this.BtnAdd.Text = "Add";
             this.BtnAdd.UseVisualStyleBackColor = true;
@@ -116,67 +125,28 @@ namespace GlucoCheck.Forms
             // BtnCancel
             // 
             this.BtnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnCancel.Location = new System.Drawing.Point(20, 262);
+            this.BtnCancel.Location = new System.Drawing.Point(16, 235);
             this.BtnCancel.Name = "BtnCancel";
-            this.BtnCancel.Size = new System.Drawing.Size(100, 24);
+            this.BtnCancel.Size = new System.Drawing.Size(74, 23);
             this.BtnCancel.TabIndex = 7;
             this.BtnCancel.Text = "Cancel";
             this.BtnCancel.UseVisualStyleBackColor = true;
             this.BtnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
             // 
-            // LblWarningBSL
-            // 
-            this.LblWarningBSL.AutoSize = true;
-            this.LblWarningBSL.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblWarningBSL.ForeColor = System.Drawing.Color.Red;
-            this.LblWarningBSL.Location = new System.Drawing.Point(126, 29);
-            this.LblWarningBSL.Name = "LblWarningBSL";
-            this.LblWarningBSL.Size = new System.Drawing.Size(171, 32);
-            this.LblWarningBSL.TabIndex = 8;
-            this.LblWarningBSL.Text = "Must be a number,\r\nand must not be less than 0.";
-            this.LblWarningBSL.Visible = false;
-            // 
-            // LblWarningCarbs
-            // 
-            this.LblWarningCarbs.AutoSize = true;
-            this.LblWarningCarbs.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblWarningCarbs.ForeColor = System.Drawing.Color.Red;
-            this.LblWarningCarbs.Location = new System.Drawing.Point(126, 111);
-            this.LblWarningCarbs.Name = "LblWarningCarbs";
-            this.LblWarningCarbs.Size = new System.Drawing.Size(171, 32);
-            this.LblWarningCarbs.TabIndex = 9;
-            this.LblWarningCarbs.Text = "Must be a number,\r\nand must not be less than 0.";
-            this.LblWarningCarbs.Visible = false;
-            // 
-            // LblWarningInsulin
-            // 
-            this.LblWarningInsulin.AutoSize = true;
-            this.LblWarningInsulin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblWarningInsulin.ForeColor = System.Drawing.Color.Red;
-            this.LblWarningInsulin.Location = new System.Drawing.Point(126, 193);
-            this.LblWarningInsulin.Name = "LblWarningInsulin";
-            this.LblWarningInsulin.Size = new System.Drawing.Size(171, 32);
-            this.LblWarningInsulin.TabIndex = 10;
-            this.LblWarningInsulin.Text = "Must be a number,\r\nand must not be less than 0.";
-            this.LblWarningInsulin.Visible = false;
-            // 
             // FrmAddEntry
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(350, 300);
-            this.Controls.Add(this.LblWarningInsulin);
-            this.Controls.Add(this.LblWarningCarbs);
-            this.Controls.Add(this.LblWarningBSL);
+            this.ClientSize = new System.Drawing.Size(249, 271);
             this.Controls.Add(this.BtnCancel);
             this.Controls.Add(this.BtnAdd);
-            this.Controls.Add(this.TxtboxInsulin);
+            this.Controls.Add(this.NumUpDownInsulinDosed);
+            this.Controls.Add(this.NumUpDownCarbs);
             this.Controls.Add(this.Lbl3);
-            this.Controls.Add(this.TxtboxCarbs);
             this.Controls.Add(this.Lbl2);
-            this.Controls.Add(this.TxtboxBSL);
+            this.Controls.Add(this.NumUpDownCurrentBSL);
             this.Controls.Add(this.Lbl1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "FrmAddEntry";
             this.ShowIcon = false;
@@ -185,6 +155,9 @@ namespace GlucoCheck.Forms
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add entry to log";
             this.Load += new System.EventHandler(this.FrmAddEntry_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.NumUpDownCurrentBSL)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NumUpDownCarbs)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NumUpDownInsulinDosed)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -193,15 +166,12 @@ namespace GlucoCheck.Forms
         #endregion
 
         private System.Windows.Forms.Label Lbl1;
-        private System.Windows.Forms.TextBox TxtboxBSL;
+        private System.Windows.Forms.NumericUpDown NumUpDownCurrentBSL;
         private System.Windows.Forms.Label Lbl2;
-        private System.Windows.Forms.TextBox TxtboxCarbs;
         private System.Windows.Forms.Label Lbl3;
-        private System.Windows.Forms.TextBox TxtboxInsulin;
+        private System.Windows.Forms.NumericUpDown NumUpDownCarbs;
+        private System.Windows.Forms.NumericUpDown NumUpDownInsulinDosed;
         private System.Windows.Forms.Button BtnAdd;
         private System.Windows.Forms.Button BtnCancel;
-        private System.Windows.Forms.Label LblWarningBSL;
-        private System.Windows.Forms.Label LblWarningCarbs;
-        private System.Windows.Forms.Label LblWarningInsulin;
     }
 }
