@@ -27,6 +27,7 @@ namespace GlucoCheck.Forms
         {
             Form addEntry = new FrmAddEntry();
             addEntry.ShowDialog();
+            RefreshLastEntry();
         }
 
         private void RefreshLastEntry()
