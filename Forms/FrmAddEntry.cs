@@ -27,7 +27,12 @@ namespace GlucoCheck.Forms
                 InsulinDosed = (float)NumUpDownInsulinDosed.Value
             };
 
-            //Todo: update DB with the new entry.
+            // Update the database with the current entry object
+            using (var db = new AppDbContext())
+            {
+                db.Log.Add(entry);
+                db.SaveChanges();
+            }
         }
 
         private void BtnCancel_Click(object sender, EventArgs e)
