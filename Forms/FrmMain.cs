@@ -38,6 +38,7 @@ namespace GlucoCheck.Forms
                 if (lastEntry != null)
                 {
                     LblLastEntry.Text = lastEntry.BSL.ToString();
+                    LblLastEntryDate.Text = lastEntry.EasyDate.ToString() + " at " + lastEntry.EasyTime.ToString();
                 }
             }
         }
