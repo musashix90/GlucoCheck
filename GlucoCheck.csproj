@@ -111,6 +111,7 @@
     <Compile Include="Classes\AppDbContext.cs" />
     <Compile Include="Classes\DataValidation.cs" />
     <Compile Include="Classes\LogEntry.cs" />
+    <Compile Include="Classes\Reminder.cs" />
     <Compile Include="Classes\Settings.cs" />
     <Compile Include="Classes\User.cs" />
     <Compile Include="Forms\FrmAddEntry.cs">
