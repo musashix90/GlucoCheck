@@ -30,6 +30,11 @@ namespace GlucoCheck.Forms
             RefreshLastEntry();
         }
 
+        private void BtnViewGraph_Click(object sender, EventArgs e)
+        {
+            Form logGraph = new FrmLogGraph();
+            logGraph.ShowDialog();
+        }
         private void RefreshLastEntry()
         {
             using (var db = new AppDbContext())

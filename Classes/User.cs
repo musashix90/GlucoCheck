@@ -51,6 +51,7 @@ namespace GlucoCheck.Classes
         public void CreateLog()
         {
             //Open form to input new log properties
+
         }
 
         public void EditLog(LogEntry editLog)
