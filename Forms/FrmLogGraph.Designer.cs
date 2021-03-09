@@ -40,14 +40,13 @@ namespace GlucoCheck.Forms
             // 
             chartArea1.Name = "ChartArea1";
             this.BSLChart.ChartAreas.Add(chartArea1);
-            this.BSLChart.Location = new System.Drawing.Point(18, 36);
-            this.BSLChart.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.BSLChart.Location = new System.Drawing.Point(12, 23);
             this.BSLChart.Name = "BSLChart";
             series1.ChartArea = "ChartArea1";
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
             series1.Name = "BSL";
             this.BSLChart.Series.Add(series1);
-            this.BSLChart.Size = new System.Drawing.Size(1169, 648);
+            this.BSLChart.Size = new System.Drawing.Size(776, 415);
             this.BSLChart.TabIndex = 0;
             this.BSLChart.Text = "bslchart";
             title1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -62,11 +61,10 @@ namespace GlucoCheck.Forms
             // 
             // FrmLogGraph
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1200, 703);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.BSLChart);
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FrmLogGraph";
             this.Text = "FrmLogGraph";
             this.Load += new System.EventHandler(this.FrmLogGraph_Load);
