@@ -17,7 +17,8 @@ namespace GlucoCheck.Forms
         public FrmLogGraph()
         {
             InitializeComponent();
-
+            // Set cbFilterDays to default text
+            cbFilterDays.SelectedIndex = 0;
         }
         private void FrmLogGraph_Load(object sender, EventArgs e)
         {
@@ -42,24 +43,41 @@ namespace GlucoCheck.Forms
                 }
             }
 
+            int userBSLHigh = 180;
+            int userBSLLow = 130;
+
             //Display Top and Bottom line for BSL user average
             StripLine HighLine = new StripLine();
             StripLine LowLine = new StripLine();
             LowLine.Interval = 0;
-            LowLine.IntervalOffset = 100;//(Placeholder) This would be where users low range would go.
+            LowLine.IntervalOffset = userBSLLow;
             LowLine.StripWidth = 1;
             LowLine.BackColor = Color.Red;
             BSLChart.ChartAreas["ChartArea1"].AxisY.StripLines.Add(LowLine);
             HighLine.Interval = 0;
-            HighLine.IntervalOffset = 130;//(Placeholder) This would be where users high range would go.
+            HighLine.IntervalOffset = userBSLHigh;
             HighLine.StripWidth = 1;
             HighLine.BackColor = Color.Red;
             BSLChart.ChartAreas["ChartArea1"].AxisY.StripLines.Add(HighLine);
         }
 
-        private void chart1_Click(object sender, EventArgs e)
+        private void cbFilterDays_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            DateTime currentDate = DateTime.Today;
+            
+            switch(cbFilterDays.SelectedIndex)
+            {
+                case 0:
+                    Console.WriteLine("30 days selected");
+      
+                    break;
+                case 1:
+                    Console.WriteLine("60 days selected");
+                    break;
+                case 2:
+                    Console.WriteLine("90 days selected");
+                    break;
+            }
         }
     }
 }
