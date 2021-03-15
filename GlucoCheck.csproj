@@ -133,6 +133,12 @@
     <Compile Include="Forms\FrmMain.Designer.cs">
       <DependentUpon>FrmMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FrmSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmSettings.Designer.cs">
+      <DependentUpon>FrmSettings.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\202102200000521_InitialLogEntry.cs" />
     <Compile Include="Migrations\202102200000521_InitialLogEntry.designer.cs">
       <DependentUpon>202102200000521_InitialLogEntry.cs</DependentUpon>
@@ -148,6 +154,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmSettings.resx">
+      <DependentUpon>FrmSettings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202102200000521_InitialLogEntry.resx">
       <DependentUpon>202102200000521_InitialLogEntry.cs</DependentUpon>
