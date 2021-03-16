@@ -21,6 +21,7 @@ namespace GlucoCheck.Forms
         private void FrmMain_Load(object sender, EventArgs e)
         {
             RefreshLastEntry();
+            InitializeTimer();
         }
 
         private void BtnNewEntry_Click(object sender, EventArgs e)
@@ -46,6 +47,19 @@ namespace GlucoCheck.Forms
                     LblLastEntryDate.Text = lastEntry.EasyDate.ToString() + " at " + lastEntry.EasyTime.ToString();
                 }
             }
+        }
+
+        private void InitializeTimer()
+        {
+            timer1.Interval = 10000;
+            timer1.Tick += new EventHandler(TimerTick);
+            timer1.Enabled = true;
+        }
+
+        private void TimerTick(object sender, EventArgs e)
+        {
+            //LblLastEntry.Text += "a"; I wrote this line to make sure the timer worked
+            // This is where code would go if I could figure out how to send a notification without everything breaking
         }
     }
 }
