@@ -37,6 +37,7 @@ namespace GlucoCheck.Forms
             this.label1 = new System.Windows.Forms.Label();
             this.BtnViewGraph = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.BtnViewLog = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // BtnNewEntry
@@ -96,8 +97,8 @@ namespace GlucoCheck.Forms
             // 
             // BtnViewGraph
             // 
-            this.BtnViewGraph.Location = new System.Drawing.Point(331, 242);
-            this.BtnViewGraph.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BtnViewGraph.Location = new System.Drawing.Point(331, 245);
+            this.BtnViewGraph.Margin = new System.Windows.Forms.Padding(2);
             this.BtnViewGraph.Name = "BtnViewGraph";
             this.BtnViewGraph.Size = new System.Drawing.Size(122, 41);
             this.BtnViewGraph.TabIndex = 5;
@@ -105,11 +106,23 @@ namespace GlucoCheck.Forms
             this.BtnViewGraph.UseVisualStyleBackColor = true;
             this.BtnViewGraph.Click += new System.EventHandler(this.BtnViewGraph_Click);
             // 
+            // BtnViewLog
+            // 
+            this.BtnViewLog.Location = new System.Drawing.Point(331, 302);
+            this.BtnViewLog.Margin = new System.Windows.Forms.Padding(2);
+            this.BtnViewLog.Name = "BtnViewLog";
+            this.BtnViewLog.Size = new System.Drawing.Size(122, 41);
+            this.BtnViewLog.TabIndex = 6;
+            this.BtnViewLog.Text = "View log";
+            this.BtnViewLog.UseVisualStyleBackColor = true;
+            this.BtnViewLog.Click += new System.EventHandler(this.BtnViewLog_Click);
+            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 462);
+            this.Controls.Add(this.BtnViewLog);
             this.Controls.Add(this.BtnViewGraph);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.LblLastEntryDate);
@@ -138,5 +151,6 @@ namespace GlucoCheck.Forms
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button BtnViewGraph;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Button BtnViewLog;
     }
 }

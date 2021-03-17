@@ -36,6 +36,13 @@ namespace GlucoCheck.Forms
             Form logGraph = new FrmLogGraph();
             logGraph.ShowDialog();
         }
+
+        private void BtnViewLog_Click(object sender, EventArgs e)
+        {
+            Form logViewer = new FrmLogViewer();
+            logViewer.ShowDialog();
+        }
+
         private void RefreshLastEntry()
         {
             using (var db = new AppDbContext())
