@@ -53,6 +53,7 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Log viewer";
+            this.Load += new System.EventHandler(this.FrmLogViewer_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DGVLogEntries)).EndInit();
             this.ResumeLayout(false);
 
