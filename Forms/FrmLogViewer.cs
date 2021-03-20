@@ -14,13 +14,7 @@ namespace GlucoCheck.Forms
 
         #region Variables
 
-        /// <summary>
-        /// Indicates if the log should be filtered when a filter control's
-        /// value on the form is changed. You may want to disable this
-        /// when, say, the form is loading and you are setting the default
-        /// values of the controls.
-        /// </summary>
-        bool filterActive = true;
+
 
         #endregion
 
@@ -55,14 +49,14 @@ namespace GlucoCheck.Forms
             // TODO - add database updating mechanism
         }
 
-        private void DTPFrom_ValueChanged(object sender, EventArgs e)
+        private void BtnApplyFilter_Click(object sender, EventArgs e)
         {
-            FilterLogByDate();
+            FilterLog();
         }
 
-        private void DTPTo_ValueChanged(object sender, EventArgs e)
+        private void BtnClearFilter_Click(object sender, EventArgs e)
         {
-            FilterLogByDate();
+            SetControlsToDefault();
         }
 
         #endregion
@@ -74,38 +68,26 @@ namespace GlucoCheck.Forms
         /// </summary>
         private void SetControlsToDefault()
         {
-            //Disable the filter controls so that default values can be set.
-            filterActive = false;
-
             //Set the default values for each control.
             DTPFrom.Value = DateTime.Now;
             DTPTo.Value = DateTime.Now.AddDays(-30);
 
-            //Enable the filter controls after setting their default values.
-            filterActive = true;
+            ComboxBSLFilter.SelectedIndex = -1;
+            NumUDBSLValue.Value = 100;
+
+            ComboxCarbsFilter.SelectedIndex = -1;
+            NumUDCarbsValue.Value = 50;
+
+            ComboxInsulinFilter.SelectedIndex = -1;
+            NumUDInsulinValue.Value = 5;
         }
 
         /// <summary>
-        /// Filters the log entries by the date range the user has selected.
+        /// Applies all set filters to the DataGridView control.
         /// </summary>
-        private void FilterLogByDate()
+        private void FilterLog()
         {
-            //Check to make sure the date range is valid.
-            if (DateTime.Compare(DTPFrom.Value, DTPTo.Value) < 0)
-            {
-                MessageBox.Show("The \"From\" date must be date that is " +
-                    "later than the \"To\" date!", "Invalid date range!",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
 
-            else if (filterActive)
-            {
-                //Filter the log entires by the from and to dates.
-                BindingSource source = new BindingSource();
-                source.DataSource = DGVLogEntries.DataSource;
-                source.Filter = "Data > " + DTPTo.Value + "AND Data < " + DTPFrom.Value;
-                DGVLogEntries.DataSource = source;
-            }
         }
 
         #endregion
