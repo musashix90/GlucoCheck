@@ -57,6 +57,7 @@ namespace GlucoCheck.Forms
         private void BtnClearFilter_Click(object sender, EventArgs e)
         {
             SetControlsToDefault();
+            FilterLog();
         }
 
         #endregion
@@ -69,8 +70,8 @@ namespace GlucoCheck.Forms
         private void SetControlsToDefault()
         {
             //Set the default values for each control.
-            DTPFrom.Value = DateTime.Now;
-            DTPTo.Value = DateTime.Now.AddDays(-30);
+            DTPFrom.Value = DateTime.Now.AddDays(-30);
+            DTPTo.Value = DateTime.Now;
 
             ComboxBSLFilter.SelectedIndex = -1;
             NumUDBSLValue.Value = 100;
@@ -87,7 +88,32 @@ namespace GlucoCheck.Forms
         /// </summary>
         private void FilterLog()
         {
+            using (var db = new AppDbContext())
+            {
+                //Filter the log entires by the from and to dates.
+                var entries = db.Log.Where(l => l.EntryDate >= DTPFrom.Value)
+                    .Where(l => l.EntryDate <= DTPTo.Value);
 
+                switch (ComboxBSLFilter.SelectedIndex)
+                {
+                    case 0:
+                        entries = entries.Where(l => l.BSL == NumUDBSLValue.Value);
+                        break;
+                    case 1:
+                        entries = entries.Where(l => l.BSL > NumUDBSLValue.Value);
+                        break;
+                    case 2:
+                        entries = entries.Where(l => l.BSL < NumUDBSLValue.Value);
+                        break;
+                    default:
+                        break;
+                }
+
+                //                    .Where(l => l.Carbs >= NumUDCarbsValue.Value)
+                //                    .Where(l => l.InsulinDosed >= (Double)NumUDInsulinValue.Value)
+                //                    .ToList();
+                DGVLogEntries.DataSource = entries.ToList();
+            }
         }
 
         #endregion
