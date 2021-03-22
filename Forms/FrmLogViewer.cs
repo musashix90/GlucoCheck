@@ -109,6 +109,42 @@ namespace GlucoCheck.Forms
                         break;
                 }
 
+                switch (ComboxCarbsFilter.SelectedIndex)
+                {
+                    case 0:
+                        entries = entries.Where(l => l.Carbs == NumUDCarbsValue.Value);
+                        break;
+
+                    case 1:
+                        entries = entries.Where(l => l.Carbs > NumUDCarbsValue.Value);
+                        break;
+
+                    case 2:
+                        entries = entries.Where(l => l.Carbs < NumUDCarbsValue.Value);
+                        break;
+
+                    default:
+                        break;
+                }
+
+                switch (ComboxInsulinFilter.SelectedIndex)
+                {
+                    case 0:
+                        entries = entries.Where(l => l.InsulinDosed == (float)NumUDInsulinValue.Value);
+                        break;
+
+                    case 1:
+                        entries = entries.Where(l => l.InsulinDosed > (float)NumUDInsulinValue.Value);
+                        break;
+
+                    case 2:
+                        entries = entries.Where(l => l.InsulinDosed < (float)NumUDInsulinValue.Value);
+                        break;
+
+                    default:
+                        break;
+                }
+
                 //                    .Where(l => l.Carbs >= NumUDCarbsValue.Value)
                 //                    .Where(l => l.InsulinDosed >= (Double)NumUDInsulinValue.Value)
                 //                    .ToList();
