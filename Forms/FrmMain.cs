@@ -65,8 +65,10 @@ namespace GlucoCheck.Forms
 
         private void TimerTick(object sender, EventArgs e)
         {
-            //LblLastEntry.Text += "a"; I wrote this line to make sure the timer worked
-            // This is where code would go if I could figure out how to send a notification without everything breaking
+            Form reminderBox = new FrmReminder("this is a placeholder reminder");
+            reminderBox.ShowDialog();
+
+            timer1.Interval = 600000; // I added this line to show the reminder every 10 minutes so that you won't get spammed with reminders. I leave it going to prove that it works
         }
     }
 }
