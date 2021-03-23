@@ -121,6 +121,12 @@
     <Compile Include="Forms\FrmAddEntry.Designer.cs">
       <DependentUpon>FrmAddEntry.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FrmEditEntry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmEditEntry.Designer.cs">
+      <DependentUpon>FrmEditEntry.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FrmLogGraph.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -160,6 +166,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\FrmAddEntry.resx">
       <DependentUpon>FrmAddEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmEditEntry.resx">
+      <DependentUpon>FrmEditEntry.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmLogGraph.resx">
       <DependentUpon>FrmLogGraph.cs</DependentUpon>
