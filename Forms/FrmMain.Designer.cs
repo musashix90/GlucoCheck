@@ -38,14 +38,14 @@ namespace GlucoCheck.Forms
             this.BtnViewGraph = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.BtnViewLog = new System.Windows.Forms.Button();
+            this.SettingsBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // BtnNewEntry
             // 
-            this.BtnNewEntry.Location = new System.Drawing.Point(331, 188);
-            this.BtnNewEntry.Margin = new System.Windows.Forms.Padding(2);
+            this.BtnNewEntry.Location = new System.Drawing.Point(496, 289);
             this.BtnNewEntry.Name = "BtnNewEntry";
-            this.BtnNewEntry.Size = new System.Drawing.Size(122, 41);
+            this.BtnNewEntry.Size = new System.Drawing.Size(183, 63);
             this.BtnNewEntry.TabIndex = 0;
             this.BtnNewEntry.Text = "Add New Entry";
             this.BtnNewEntry.UseVisualStyleBackColor = true;
@@ -55,20 +55,18 @@ namespace GlucoCheck.Forms
             // 
             this.LblLastEntryLabel.AutoSize = true;
             this.LblLastEntryLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblLastEntryLabel.Location = new System.Drawing.Point(303, 56);
-            this.LblLastEntryLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.LblLastEntryLabel.Location = new System.Drawing.Point(454, 86);
             this.LblLastEntryLabel.Name = "LblLastEntryLabel";
-            this.LblLastEntryLabel.Size = new System.Drawing.Size(177, 20);
+            this.LblLastEntryLabel.Size = new System.Drawing.Size(263, 29);
             this.LblLastEntryLabel.TabIndex = 1;
             this.LblLastEntryLabel.Text = "Last Blood Sugar Entry:";
             // 
             // LblLastEntry
             // 
             this.LblLastEntry.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblLastEntry.Location = new System.Drawing.Point(355, 98);
-            this.LblLastEntry.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.LblLastEntry.Location = new System.Drawing.Point(532, 151);
             this.LblLastEntry.Name = "LblLastEntry";
-            this.LblLastEntry.Size = new System.Drawing.Size(76, 44);
+            this.LblLastEntry.Size = new System.Drawing.Size(114, 68);
             this.LblLastEntry.TabIndex = 2;
             this.LblLastEntry.Text = "-";
             this.LblLastEntry.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -76,10 +74,9 @@ namespace GlucoCheck.Forms
             // LblLastEntryDate
             // 
             this.LblLastEntryDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblLastEntryDate.Location = new System.Drawing.Point(236, 158);
-            this.LblLastEntryDate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.LblLastEntryDate.Location = new System.Drawing.Point(354, 243);
             this.LblLastEntryDate.Name = "LblLastEntryDate";
-            this.LblLastEntryDate.Size = new System.Drawing.Size(311, 21);
+            this.LblLastEntryDate.Size = new System.Drawing.Size(466, 32);
             this.LblLastEntryDate.TabIndex = 3;
             this.LblLastEntryDate.Text = "Please click \"Add New Entry\" to get started";
             this.LblLastEntryDate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -88,19 +85,17 @@ namespace GlucoCheck.Forms
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(320, 11);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(480, 17);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(144, 29);
+            this.label1.Size = new System.Drawing.Size(213, 40);
             this.label1.TabIndex = 4;
             this.label1.Text = "GlucoCheck";
             // 
             // BtnViewGraph
             // 
-            this.BtnViewGraph.Location = new System.Drawing.Point(331, 245);
-            this.BtnViewGraph.Margin = new System.Windows.Forms.Padding(2);
+            this.BtnViewGraph.Location = new System.Drawing.Point(496, 377);
             this.BtnViewGraph.Name = "BtnViewGraph";
-            this.BtnViewGraph.Size = new System.Drawing.Size(122, 41);
+            this.BtnViewGraph.Size = new System.Drawing.Size(183, 63);
             this.BtnViewGraph.TabIndex = 5;
             this.BtnViewGraph.Text = "View Graph";
             this.BtnViewGraph.UseVisualStyleBackColor = true;
@@ -108,20 +103,30 @@ namespace GlucoCheck.Forms
             // 
             // BtnViewLog
             // 
-            this.BtnViewLog.Location = new System.Drawing.Point(331, 302);
-            this.BtnViewLog.Margin = new System.Windows.Forms.Padding(2);
+            this.BtnViewLog.Location = new System.Drawing.Point(496, 465);
             this.BtnViewLog.Name = "BtnViewLog";
-            this.BtnViewLog.Size = new System.Drawing.Size(122, 41);
+            this.BtnViewLog.Size = new System.Drawing.Size(183, 63);
             this.BtnViewLog.TabIndex = 6;
-            this.BtnViewLog.Text = "View log";
+            this.BtnViewLog.Text = "View Log";
             this.BtnViewLog.UseVisualStyleBackColor = true;
             this.BtnViewLog.Click += new System.EventHandler(this.BtnViewLog_Click);
             // 
+            // SettingsBtn
+            // 
+            this.SettingsBtn.Location = new System.Drawing.Point(496, 554);
+            this.SettingsBtn.Name = "SettingsBtn";
+            this.SettingsBtn.Size = new System.Drawing.Size(183, 63);
+            this.SettingsBtn.TabIndex = 7;
+            this.SettingsBtn.Text = "View Settings";
+            this.SettingsBtn.UseVisualStyleBackColor = true;
+            this.SettingsBtn.Click += new System.EventHandler(this.SettingsBtn_Click);
+            // 
             // FrmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 462);
+            this.ClientSize = new System.Drawing.Size(1176, 711);
+            this.Controls.Add(this.SettingsBtn);
             this.Controls.Add(this.BtnViewLog);
             this.Controls.Add(this.BtnViewGraph);
             this.Controls.Add(this.label1);
@@ -130,6 +135,7 @@ namespace GlucoCheck.Forms
             this.Controls.Add(this.LblLastEntryLabel);
             this.Controls.Add(this.BtnNewEntry);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
             this.Name = "FrmMain";
             this.ShowIcon = false;
@@ -152,5 +158,6 @@ namespace GlucoCheck.Forms
         private System.Windows.Forms.Button BtnViewGraph;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Button BtnViewLog;
+        private System.Windows.Forms.Button SettingsBtn;
     }
 }

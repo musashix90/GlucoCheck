@@ -70,5 +70,11 @@ namespace GlucoCheck.Forms
 
             timer1.Interval = 600000; // I added this line to show the reminder every 10 minutes so that you won't get spammed with reminders. I leave it going to prove that it works
         }
+
+        private void SettingsBtn_Click(object sender, EventArgs e)
+        {
+            Form settings = new FrmSettings();
+            settings.ShowDialog();
+        }
     }
 }

@@ -41,12 +41,13 @@ namespace GlucoCheck.Forms
             this.ActiveHoursLabel = new System.Windows.Forms.Label();
             this.StartTimeLabel = new System.Windows.Forms.Label();
             this.EndTimeLabel = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.EndTimePicker = new System.Windows.Forms.DateTimePicker();
             this.RemindersLabel = new System.Windows.Forms.Label();
             this.DailyReminderLabel = new System.Windows.Forms.Label();
             this.SecondEntryReminder = new System.Windows.Forms.Label();
             this.DailyReminderUpDown = new System.Windows.Forms.NumericUpDown();
             this.SecondReminderUpDown = new System.Windows.Forms.NumericUpDown();
+            this.SaveBtn = new System.Windows.Forms.Button();
             this.MeasurementGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DailyReminderUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SecondReminderUpDown)).BeginInit();
@@ -135,6 +136,7 @@ namespace GlucoCheck.Forms
             this.StartTimePicker.ShowUpDown = true;
             this.StartTimePicker.Size = new System.Drawing.Size(138, 26);
             this.StartTimePicker.TabIndex = 9;
+            this.StartTimePicker.MouseDown += new System.Windows.Forms.MouseEventHandler(this.StartTimePicker_MouseDown);
             // 
             // ActiveHoursLabel
             // 
@@ -163,15 +165,16 @@ namespace GlucoCheck.Forms
             this.EndTimeLabel.TabIndex = 12;
             this.EndTimeLabel.Text = "End:";
             // 
-            // dateTimePicker1
+            // EndTimePicker
             // 
-            this.dateTimePicker1.CustomFormat = "hh:mm tt";
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(269, 295);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.ShowUpDown = true;
-            this.dateTimePicker1.Size = new System.Drawing.Size(144, 26);
-            this.dateTimePicker1.TabIndex = 13;
+            this.EndTimePicker.CustomFormat = "hh:mm tt";
+            this.EndTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.EndTimePicker.Location = new System.Drawing.Point(269, 295);
+            this.EndTimePicker.Name = "EndTimePicker";
+            this.EndTimePicker.ShowUpDown = true;
+            this.EndTimePicker.Size = new System.Drawing.Size(144, 26);
+            this.EndTimePicker.TabIndex = 13;
+            this.EndTimePicker.MouseDown += new System.Windows.Forms.MouseEventHandler(this.EndTimePicker_MouseDown);
             // 
             // RemindersLabel
             // 
@@ -187,7 +190,7 @@ namespace GlucoCheck.Forms
             this.DailyReminderLabel.AutoSize = true;
             this.DailyReminderLabel.Location = new System.Drawing.Point(12, 396);
             this.DailyReminderLabel.Name = "DailyReminderLabel";
-            this.DailyReminderLabel.Size = new System.Drawing.Size(456, 30);
+            this.DailyReminderLabel.Size = new System.Drawing.Size(304, 20);
             this.DailyReminderLabel.TabIndex = 15;
             this.DailyReminderLabel.Text = "Hours Elapsed Between Daily Reminders:";
             // 
@@ -196,7 +199,7 @@ namespace GlucoCheck.Forms
             this.SecondEntryReminder.AutoSize = true;
             this.SecondEntryReminder.Location = new System.Drawing.Point(12, 426);
             this.SecondEntryReminder.Name = "SecondEntryReminder";
-            this.SecondEntryReminder.Size = new System.Drawing.Size(561, 30);
+            this.SecondEntryReminder.Size = new System.Drawing.Size(374, 20);
             this.SecondEntryReminder.TabIndex = 16;
             this.SecondEntryReminder.Text = "Hours Elapsed Between First and Second Reading:";
             // 
@@ -224,17 +227,28 @@ namespace GlucoCheck.Forms
             this.SecondReminderUpDown.Size = new System.Drawing.Size(56, 26);
             this.SecondReminderUpDown.TabIndex = 18;
             // 
+            // SaveBtn
+            // 
+            this.SaveBtn.Location = new System.Drawing.Point(16, 478);
+            this.SaveBtn.Name = "SaveBtn";
+            this.SaveBtn.Size = new System.Drawing.Size(199, 41);
+            this.SaveBtn.TabIndex = 19;
+            this.SaveBtn.Text = "Save";
+            this.SaveBtn.UseVisualStyleBackColor = true;
+            this.SaveBtn.Click += new System.EventHandler(this.SaveBtn_Click);
+            // 
             // FrmSettings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 540);
+            this.Controls.Add(this.SaveBtn);
             this.Controls.Add(this.SecondReminderUpDown);
             this.Controls.Add(this.DailyReminderUpDown);
             this.Controls.Add(this.SecondEntryReminder);
             this.Controls.Add(this.DailyReminderLabel);
             this.Controls.Add(this.RemindersLabel);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.EndTimePicker);
             this.Controls.Add(this.EndTimeLabel);
             this.Controls.Add(this.StartTimeLabel);
             this.Controls.Add(this.ActiveHoursLabel);
@@ -247,6 +261,7 @@ namespace GlucoCheck.Forms
             this.Controls.Add(this.HighThresholdTextBox);
             this.Name = "FrmSettings";
             this.Text = "Settings";
+            this.Load += new System.EventHandler(this.FrmSettings_Load);
             this.MeasurementGroupBox.ResumeLayout(false);
             this.MeasurementGroupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DailyReminderUpDown)).EndInit();
@@ -270,11 +285,12 @@ namespace GlucoCheck.Forms
         private System.Windows.Forms.Label ActiveHoursLabel;
         private System.Windows.Forms.Label StartTimeLabel;
         private System.Windows.Forms.Label EndTimeLabel;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker EndTimePicker;
         private System.Windows.Forms.Label RemindersLabel;
         private System.Windows.Forms.Label DailyReminderLabel;
         private System.Windows.Forms.Label SecondEntryReminder;
         private System.Windows.Forms.NumericUpDown DailyReminderUpDown;
         private System.Windows.Forms.NumericUpDown SecondReminderUpDown;
+        private System.Windows.Forms.Button SaveBtn;
     }
 }
