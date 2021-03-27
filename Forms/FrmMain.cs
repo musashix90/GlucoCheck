@@ -20,6 +20,7 @@ namespace GlucoCheck.Forms
 
         private void FrmMain_Load(object sender, EventArgs e)
         {
+            AddOrFetchUser();
             RefreshLastEntry();
             InitializeTimer();
         }
@@ -52,6 +53,19 @@ namespace GlucoCheck.Forms
                 {
                     LblLastEntry.Text = lastEntry.BSL.ToString();
                     LblLastEntryDate.Text = lastEntry.EasyDate.ToString() + " at " + lastEntry.EasyTime.ToString();
+                }
+            }
+        }
+
+        private void AddOrFetchUser()
+        {
+            using (var db = new AppDbContext())
+            {
+                if (db.User.Count() == 0)
+                {
+                    User user = new User("New", "User", "", "", "", "", DateTime.Today, 0, 0);
+                    db.User.Add(user);
+                    db.SaveChanges();
                 }
             }
         }

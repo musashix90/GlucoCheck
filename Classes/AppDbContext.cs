@@ -33,6 +33,9 @@ namespace GlucoCheck.Classes
         }
 
         public DbSet<LogEntry> Log { get; set; }
+
+        public DbSet<User> User { get; set; }
+
         #endregion
     }
 }

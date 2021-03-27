@@ -3,24 +3,36 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace GlucoCheck.Classes
 {
+    [Table("users")]
     class User
     {
         #region Properties
-        string FirstName { get; set; }
-        string LastName { get; set; }
-        string Password { get; set; }
-        string SecurityQuestion { get; set; }
-        string SecurityAnswer { get; set; }
-        string DoctorName { get; set; }
-        string Gender { get; set; }
-        DateTime BirthDate { get; set; }
-        float Weight { get; set; }
-        int Phone { get; set; }
+        [Key]
+        public string UserId { get; set; }
+
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string Password { get; set; }
+        public string SecurityQuestion { get; set; }
+        public string SecurityAnswer { get; set; }
+        public string DoctorName { get; set; }
+        public string Gender { get; set; }
+        public DateTime BirthDate { get; set; }
+        public float Weight { get; set; }
+        public int Phone { get; set; }
+
+        [NotMapped]
         int BSLHigh { get; set; }
+
+        [NotMapped]
         int BSLLow { get; set; }
+
+        [NotMapped]
         LogEntry[] AllLogs { get; set; }
         #endregion
 
@@ -28,6 +40,8 @@ namespace GlucoCheck.Classes
         // Call constructor after user signs up.
         public User(string FirstName, string LastName, string Password, string SecurityQuestion, string SecurityAnswer, string Gender, DateTime BirthDate, int BSLHigh, int BSLLow)
         {
+            Guid guid = Guid.NewGuid();
+            this.UserId = guid.ToString();
             this.FirstName = FirstName;
             this.LastName = LastName;
             this.Password = Password;

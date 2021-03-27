@@ -161,6 +161,10 @@
     <Compile Include="Migrations\202102200000521_InitialLogEntry.designer.cs">
       <DependentUpon>202102200000521_InitialLogEntry.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202103271846481_InitialUser.cs" />
+    <Compile Include="Migrations\202103271846481_InitialUser.designer.cs">
+      <DependentUpon>202103271846481_InitialUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -187,6 +191,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202102200000521_InitialLogEntry.resx">
       <DependentUpon>202102200000521_InitialLogEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202103271846481_InitialUser.resx">
+      <DependentUpon>202103271846481_InitialUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
