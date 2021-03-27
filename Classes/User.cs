@@ -9,7 +9,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace GlucoCheck.Classes
 {
     [Table("users")]
-    class User
+    public class User
     {
         #region Properties
         [Key]
@@ -37,6 +37,13 @@ namespace GlucoCheck.Classes
         #endregion
 
         #region Functions
+
+        // Blank constructor for empty User object
+        public User()
+        {
+
+        }
+
         // Call constructor after user signs up.
         public User(string FirstName, string LastName, string Password, string SecurityQuestion, string SecurityAnswer, string Gender, DateTime BirthDate, int BSLHigh, int BSLLow)
         {
