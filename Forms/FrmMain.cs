@@ -14,6 +14,7 @@ namespace GlucoCheck.Forms
     public partial class FrmMain : Form
     {
         public static User user;
+        public static Settings settings;
 
         public FrmMain()
         {
@@ -23,6 +24,7 @@ namespace GlucoCheck.Forms
         private void FrmMain_Load(object sender, EventArgs e)
         {
             AddOrFetchUser();
+            CheckSettings();
             RefreshLastEntry();
             InitializeTimer();
         }
@@ -60,7 +62,7 @@ namespace GlucoCheck.Forms
             }
         }
 
-        private User AddOrFetchUser()
+        private void AddOrFetchUser()
         {
             using (var db = new AppDbContext())
             {
@@ -75,7 +77,19 @@ namespace GlucoCheck.Forms
                     user = db.User.First();
                 }
             }
-            return user;
+        }
+
+        private void CheckSettings()
+        {
+            using (var db = new AppDbContext())
+            {
+                if (db.Settings.Where(l => l.UserId == user.UserId).Count() == 0)
+                {
+                    FrmSettings frmSettings = new FrmSettings();
+                    frmSettings.User = user;
+                    frmSettings.ShowDialog();
+                }
+            }
         }
 
         private void InitializeTimer()
@@ -95,8 +109,9 @@ namespace GlucoCheck.Forms
 
         private void SettingsBtn_Click(object sender, EventArgs e)
         {
-            Form settings = new FrmSettings();
-            settings.ShowDialog();
+            FrmSettings frmSettings = new FrmSettings();
+            frmSettings.User = user;
+            frmSettings.ShowDialog();
         }
     }
 }

@@ -14,6 +14,7 @@ namespace GlucoCheck.Forms
     public partial class FrmSettings : Form
     {
         private Settings settings;
+        public User User { get; set; }
 
         public FrmSettings()
         {
@@ -85,12 +86,24 @@ namespace GlucoCheck.Forms
                 ActiveStart = activeStart,
                 ActiveEnd = activeEnd,
                 MaxDailyReminder = Convert.ToInt32(DailyReminderUpDown.Value),
-                SecondEntryReminder = Convert.ToDouble(SecondReminderUpDown.Value)
-
+                SecondEntryReminder = Convert.ToDouble(SecondReminderUpDown.Value),
+                UserId = User.UserId
             };
 
             //TODO: Create or update object in the database
-
+            using (var db = new AppDbContext())
+            {
+                if (db.Settings.Where(l => l.UserId == User.UserId).Count() == 0)
+                {
+                    db.Settings.Add(editedSettings);
+                }
+                else
+                {
+                    db.Settings.Attach(editedSettings);
+                    db.Entry(editedSettings).State = System.Data.Entity.EntityState.Modified;
+                }
+                db.SaveChanges();
+            }
         }
 
         private void StartTimePicker_MouseDown(object sender, MouseEventArgs e)

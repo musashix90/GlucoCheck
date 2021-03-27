@@ -36,6 +36,7 @@ namespace GlucoCheck.Classes
 
         public DbSet<User> User { get; set; }
 
+        public DbSet<Settings> Settings { get; set; }
         #endregion
     }
 }

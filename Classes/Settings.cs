@@ -1,10 +1,20 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace GlucoCheck.Classes
 {
+    [Table("settings")]
     public class Settings
     {
         #region Properties
+        [Key]
+        public long Id { get; set; }
+
+        [ForeignKey("User")]
+        public string UserId { get; set; }
+
+        public User User { get; set; }
 
         public double HighBSLThreshold { get; set; } = 200.0;
 

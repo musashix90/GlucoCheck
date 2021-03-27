@@ -169,6 +169,10 @@
     <Compile Include="Migrations\202103271858088_AddUserIdToLogEntry.designer.cs">
       <DependentUpon>202103271858088_AddUserIdToLogEntry.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202103272003002_InitialSettings.cs" />
+    <Compile Include="Migrations\202103272003002_InitialSettings.designer.cs">
+      <DependentUpon>202103272003002_InitialSettings.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -201,6 +205,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202103271858088_AddUserIdToLogEntry.resx">
       <DependentUpon>202103271858088_AddUserIdToLogEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202103272003002_InitialSettings.resx">
+      <DependentUpon>202103272003002_InitialSettings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
