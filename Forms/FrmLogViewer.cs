@@ -22,17 +22,15 @@ namespace GlucoCheck.Forms
 
         private void FrmLogViewer_Load(object sender, EventArgs e)
         {
-            using (var db = new AppDbContext())
-            {
-                DGVLogEntries.DataSource = db.Log.ToList();
-                DGVLogEntries.Columns["Id"].Visible = false;
-                DGVLogEntries.AllowUserToAddRows = false;
-                DGVLogEntries.CellEndEdit += new DataGridViewCellEventHandler(DataGridView_CellEndEdit);
-                DGVLogEntries.CellValidating += new DataGridViewCellValidatingEventHandler(DataGridView_CellValidating);
-            }
-
             //Set form controls to their defualt values.
             SetControlsToDefault();
+            FilterLog();
+
+            DGVLogEntries.Columns["Id"].Visible = false;
+            DGVLogEntries.AllowUserToAddRows = false;
+//            DGVLogEntries.CellEndEdit += new DataGridViewCellEventHandler(DataGridView_CellEndEdit);
+//            DGVLogEntries.CellValidating += new DataGridViewCellValidatingEventHandler(DataGridView_CellValidating);
+
         }
 
         private void DataGridView_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
@@ -93,7 +91,7 @@ namespace GlucoCheck.Forms
                 //Filter the log entires by the from and to dates.
                 var entries = db.Log.Where(l => l.EntryDate >= DTPFrom.Value)
                     .Where(l => l.EntryDate <= DTPTo.Value);
-
+                
                 switch (ComboxBSLFilter.SelectedIndex)
                 {
                     case 0:
@@ -144,10 +142,7 @@ namespace GlucoCheck.Forms
                     default:
                         break;
                 }
-
-                //                    .Where(l => l.Carbs >= NumUDCarbsValue.Value)
-                //                    .Where(l => l.InsulinDosed >= (Double)NumUDInsulinValue.Value)
-                //                    .ToList();
+                
                 DGVLogEntries.DataSource = entries.ToList();
             }
         }
