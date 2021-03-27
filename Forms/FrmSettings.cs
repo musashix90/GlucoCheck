@@ -13,7 +13,7 @@ namespace GlucoCheck.Forms
 {
     public partial class FrmSettings : Form
     {
-        private Settings settings;
+        public Settings settings { get; set; }
         public User User { get; set; }
 
         public FrmSettings()
@@ -99,11 +99,13 @@ namespace GlucoCheck.Forms
                 }
                 else
                 {
+                    editedSettings.Id = settings.Id;
                     db.Settings.Attach(editedSettings);
                     db.Entry(editedSettings).State = System.Data.Entity.EntityState.Modified;
                 }
                 db.SaveChanges();
             }
+            settings = editedSettings;
         }
 
         private void StartTimePicker_MouseDown(object sender, MouseEventArgs e)

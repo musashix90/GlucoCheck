@@ -10,7 +10,6 @@ namespace GlucoCheck.Classes
         #region Properties
         [Key]
         public long Id { get; set; }
-
         [ForeignKey("User")]
         public string UserId { get; set; }
 

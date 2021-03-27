@@ -56,7 +56,12 @@ namespace GlucoCheck.Forms
                 var lastEntry = db.Log.OrderByDescending(l => l.Id).Take(1).SingleOrDefault();
                 if (lastEntry != null)
                 {
-                    LblLastEntry.Text = lastEntry.BSL.ToString();
+                    float lastBSL = lastEntry.BSL;
+                    if (settings.IsMillimoles)
+                    {
+                        lastBSL /= 18;
+                    }
+                    LblLastEntry.Text = lastBSL.ToString();
                     LblLastEntryDate.Text = lastEntry.EasyDate.ToString() + " at " + lastEntry.EasyTime.ToString();
                 }
             }
@@ -87,7 +92,12 @@ namespace GlucoCheck.Forms
                 {
                     FrmSettings frmSettings = new FrmSettings();
                     frmSettings.User = user;
+                    frmSettings.settings = settings;
                     frmSettings.ShowDialog();
+                }
+                else
+                {
+                    settings = db.Settings.Where(l => l.UserId == user.UserId).Single();
                 }
             }
         }
@@ -111,7 +121,10 @@ namespace GlucoCheck.Forms
         {
             FrmSettings frmSettings = new FrmSettings();
             frmSettings.User = user;
+            frmSettings.settings = settings;
             frmSettings.ShowDialog();
+            CheckSettings();
+            RefreshLastEntry();
         }
     }
 }
