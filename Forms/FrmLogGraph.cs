@@ -32,12 +32,15 @@ namespace GlucoCheck.Forms
             BSLChart.ChartAreas["ChartArea1"].AxisX.LabelStyle.Format = "yyyy-MM-dd";
             BSLChart.ChartAreas["ChartArea1"].AxisY.Minimum = 50;
             BSLChart.ChartAreas["ChartArea1"].AxisY.Maximum = 315;
+            BSLChart.ChartAreas["ChartArea1"].AxisX.MajorGrid.LineColor = Color.Gainsboro;
+            BSLChart.ChartAreas["ChartArea1"].AxisY.MajorGrid.LineColor = Color.Gainsboro;
 
             var fromDate = DateTime.Now.AddDays(-7);
 
             using (var db = new AppDbContext())
             {
-                foreach (var entry in db.Log.Where(l => l.EntryDate >= fromDate).OrderByDescending(l => l.Id)) {
+                //foreach (var entry in db.Log.Where(l => l.EntryDate >= fromDate).OrderByDescending(l => l.Id)) {
+                foreach (var entry in db.Log.OrderByDescending(l => l.Id)) {
                     DataPoint point = new DataPoint();
                     point.SetValueXY(entry.EntryDate, entry.BSL);
                     point.ToolTip = entry.EasyDate + " at " + entry.EasyTime + ", " + entry.BSL + "mg/dl";
@@ -65,7 +68,7 @@ namespace GlucoCheck.Forms
 
         private void cbFilterDays_SelectedIndexChanged(object sender, EventArgs e)
         {
-            DateTime currentDate = DateTime.Today;
+            DateTime currentDate = DateTime.Now.AddDays(1);
             BSLChart.ChartAreas["ChartArea1"].AxisX.Maximum = currentDate.ToOADate();
             DateTime minDate;
 
