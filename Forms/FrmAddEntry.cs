@@ -6,6 +6,12 @@ namespace GlucoCheck.Forms
 {
     public partial class FrmAddEntry : Form
     {
+        #region Variables
+
+        public User User { get; set; }
+
+        #endregion
+
         public FrmAddEntry()
         {
             InitializeComponent();
@@ -24,7 +30,8 @@ namespace GlucoCheck.Forms
             {
                 BSL = (int)NumUpDownCurrentBSL.Value,
                 Carbs = (int)NumUpDownCarbs.Value,
-                InsulinDosed = (float)NumUpDownInsulinDosed.Value
+                InsulinDosed = (float)NumUpDownInsulinDosed.Value,
+                UserId = User.UserId
             };
 
             // Update the database with the current entry object

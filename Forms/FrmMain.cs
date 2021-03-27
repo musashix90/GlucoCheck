@@ -13,6 +13,8 @@ namespace GlucoCheck.Forms
 {
     public partial class FrmMain : Form
     {
+        public static User user;
+
         public FrmMain()
         {
             InitializeComponent();
@@ -27,7 +29,8 @@ namespace GlucoCheck.Forms
 
         private void BtnNewEntry_Click(object sender, EventArgs e)
         {
-            Form addEntry = new FrmAddEntry();
+            FrmAddEntry addEntry = new FrmAddEntry();
+            addEntry.User = user;
             addEntry.ShowDialog();
             RefreshLastEntry();
         }
@@ -57,17 +60,22 @@ namespace GlucoCheck.Forms
             }
         }
 
-        private void AddOrFetchUser()
+        private User AddOrFetchUser()
         {
             using (var db = new AppDbContext())
             {
                 if (db.User.Count() == 0)
                 {
-                    User user = new User("New", "User", "", "", "", "", DateTime.Today, 0, 0);
+                    user = new User("New", "User", "", "", "", "", DateTime.Today, 0, 0);
                     db.User.Add(user);
                     db.SaveChanges();
                 }
+                else
+                {
+                    user = db.User.First();
+                }
             }
+            return user;
         }
 
         private void InitializeTimer()
