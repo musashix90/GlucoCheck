@@ -11,6 +11,10 @@ namespace GlucoCheck.Classes
         [Key]
         public long Id { get; set; }
 
+        [ForeignKey("User")]
+        public string UserId { get; set; }
+        public User User { get; set; }
+
         //Note: The EntryDate property needs to store its value in another 
         //(private) variable to avoid infinite recursion. In this case, I name
         //these variables: M_PropertName. The "M" stands for mirror since it
