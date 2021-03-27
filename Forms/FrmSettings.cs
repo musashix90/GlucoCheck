@@ -38,7 +38,7 @@ namespace GlucoCheck.Forms
             LowThresholdTextBox.Text = settings.LowBSLThreshold.ToString();
             MmolButton.Checked = settings.IsMillimoles;
             MgButton.Checked = !settings.IsMillimoles;
-            
+
             if (settings.ActiveStart == null)
             {
                 StartTimePicker.CustomFormat = " ";

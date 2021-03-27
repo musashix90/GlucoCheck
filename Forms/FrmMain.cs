@@ -14,7 +14,7 @@ namespace GlucoCheck.Forms
     public partial class FrmMain : Form
     {
         public static User user;
-        public static Settings settings;
+        public static Settings settings = new Settings();
 
         public FrmMain()
         {
@@ -90,6 +90,7 @@ namespace GlucoCheck.Forms
             {
                 if (db.Settings.Where(l => l.UserId == user.UserId).Count() == 0)
                 {
+                    MessageBox.Show("Please update your settings before proceeding.");
                     FrmSettings frmSettings = new FrmSettings();
                     frmSettings.User = user;
                     frmSettings.settings = settings;
