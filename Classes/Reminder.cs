@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace GlucoCheck.Classes
 {
+    [Table("reminders")]
     public class Reminder
     {
         #region Properties

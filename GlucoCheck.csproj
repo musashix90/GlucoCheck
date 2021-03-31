@@ -173,6 +173,10 @@
     <Compile Include="Migrations\202103272003002_InitialSettings.designer.cs">
       <DependentUpon>202103272003002_InitialSettings.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202103312204398_InitialReminders.cs" />
+    <Compile Include="Migrations\202103312204398_InitialReminders.designer.cs">
+      <DependentUpon>202103312204398_InitialReminders.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -208,6 +212,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202103272003002_InitialSettings.resx">
       <DependentUpon>202103272003002_InitialSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202103312204398_InitialReminders.resx">
+      <DependentUpon>202103312204398_InitialReminders.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
