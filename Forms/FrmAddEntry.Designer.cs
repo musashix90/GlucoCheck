@@ -59,7 +59,7 @@ namespace GlucoCheck.Forms
             // 
             this.NumUpDownCurrentBSL.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NumUpDownCurrentBSL.Location = new System.Drawing.Point(32, 71);
-            this.NumUpDownCurrentBSL.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.NumUpDownCurrentBSL.Margin = new System.Windows.Forms.Padding(6);
             this.NumUpDownCurrentBSL.Maximum = new decimal(new int[] {
             400,
             0,
@@ -95,7 +95,7 @@ namespace GlucoCheck.Forms
             // 
             this.NumUpDownCarbs.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NumUpDownCarbs.Location = new System.Drawing.Point(32, 231);
-            this.NumUpDownCarbs.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.NumUpDownCarbs.Margin = new System.Windows.Forms.Padding(6);
             this.NumUpDownCarbs.Maximum = new decimal(new int[] {
             300,
             0,
@@ -109,7 +109,7 @@ namespace GlucoCheck.Forms
             // 
             this.NumUpDownInsulinDosed.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NumUpDownInsulinDosed.Location = new System.Drawing.Point(32, 390);
-            this.NumUpDownInsulinDosed.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.NumUpDownInsulinDosed.Margin = new System.Windows.Forms.Padding(6);
             this.NumUpDownInsulinDosed.Maximum = new decimal(new int[] {
             30,
             0,
@@ -123,7 +123,7 @@ namespace GlucoCheck.Forms
             // 
             this.BtnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnAdd.Location = new System.Drawing.Point(192, 452);
-            this.BtnAdd.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.BtnAdd.Margin = new System.Windows.Forms.Padding(6);
             this.BtnAdd.Name = "BtnAdd";
             this.BtnAdd.Size = new System.Drawing.Size(148, 44);
             this.BtnAdd.TabIndex = 6;
@@ -135,7 +135,7 @@ namespace GlucoCheck.Forms
             // 
             this.BtnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnCancel.Location = new System.Drawing.Point(32, 452);
-            this.BtnCancel.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.BtnCancel.Margin = new System.Windows.Forms.Padding(6);
             this.BtnCancel.Name = "BtnCancel";
             this.BtnCancel.Size = new System.Drawing.Size(148, 44);
             this.BtnCancel.TabIndex = 7;
@@ -179,14 +179,14 @@ namespace GlucoCheck.Forms
             this.Controls.Add(this.NumUpDownCurrentBSL);
             this.Controls.Add(this.Lbl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.MaximizeBox = false;
             this.Name = "FrmAddEntry";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Add entry to log";
+            this.Text = "GlucoCheck - Add Entry";
             this.Load += new System.EventHandler(this.FrmAddEntry_Load);
             ((System.ComponentModel.ISupportInitialize)(this.NumUpDownCurrentBSL)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.NumUpDownCarbs)).EndInit();

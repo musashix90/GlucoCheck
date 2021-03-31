@@ -29,9 +29,9 @@ namespace GlucoCheck.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title4 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.BSLChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.cbFilterDays = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -43,26 +43,26 @@ namespace GlucoCheck.Forms
             this.BSLChart.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            chartArea1.Name = "ChartArea1";
-            this.BSLChart.ChartAreas.Add(chartArea1);
+            chartArea4.Name = "ChartArea1";
+            this.BSLChart.ChartAreas.Add(chartArea4);
             this.BSLChart.Location = new System.Drawing.Point(18, 178);
             this.BSLChart.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.BSLChart.Name = "BSLChart";
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series1.Name = "BSL";
-            this.BSLChart.Series.Add(series1);
+            series4.ChartArea = "ChartArea1";
+            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series4.Name = "BSL";
+            this.BSLChart.Series.Add(series4);
             this.BSLChart.Size = new System.Drawing.Size(1164, 506);
             this.BSLChart.TabIndex = 0;
             this.BSLChart.Text = "bslchart";
-            title1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            title1.Name = "Title1";
-            title1.Position.Auto = false;
-            title1.Position.Height = 90F;
-            title1.Position.Width = 5F;
-            title1.Text = "Blood Sugar Level";
-            title1.TextOrientation = System.Windows.Forms.DataVisualization.Charting.TextOrientation.Rotated270;
-            this.BSLChart.Titles.Add(title1);
+            title4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            title4.Name = "Title1";
+            title4.Position.Auto = false;
+            title4.Position.Height = 90F;
+            title4.Position.Width = 5F;
+            title4.Text = "Blood Sugar Level";
+            title4.TextOrientation = System.Windows.Forms.DataVisualization.Charting.TextOrientation.Rotated270;
+            this.BSLChart.Titles.Add(title4);
             // 
             // cbFilterDays
             // 
@@ -98,8 +98,10 @@ namespace GlucoCheck.Forms
             this.Controls.Add(this.BSLChart);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FrmLogGraph";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmLogGraph";
+            this.Text = "GlucoCheck - Log Graph";
             this.Load += new System.EventHandler(this.FrmLogGraph_Load);
             ((System.ComponentModel.ISupportInitialize)(this.BSLChart)).EndInit();
             this.ResumeLayout(false);

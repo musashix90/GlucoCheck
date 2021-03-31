@@ -281,8 +281,11 @@ namespace GlucoCheck.Forms
             this.Controls.Add(this.HighThresholdTextBox);
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FrmSettings";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Settings";
+            this.Text = "GlucoCheck - Settings";
             this.Load += new System.EventHandler(this.FrmSettings_Load);
             this.MeasurementGroupBox.ResumeLayout(false);
             this.MeasurementGroupBox.PerformLayout();

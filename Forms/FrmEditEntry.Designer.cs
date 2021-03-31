@@ -47,9 +47,10 @@ namespace GlucoCheck.Forms
             // BtnCancel
             // 
             this.BtnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnCancel.Location = new System.Drawing.Point(16, 325);
+            this.BtnCancel.Location = new System.Drawing.Point(32, 625);
+            this.BtnCancel.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.BtnCancel.Name = "BtnCancel";
-            this.BtnCancel.Size = new System.Drawing.Size(93, 23);
+            this.BtnCancel.Size = new System.Drawing.Size(186, 44);
             this.BtnCancel.TabIndex = 15;
             this.BtnCancel.Text = "Cancel";
             this.BtnCancel.UseVisualStyleBackColor = true;
@@ -58,9 +59,10 @@ namespace GlucoCheck.Forms
             // BtnSave
             // 
             this.BtnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnSave.Location = new System.Drawing.Point(115, 325);
+            this.BtnSave.Location = new System.Drawing.Point(230, 625);
+            this.BtnSave.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.BtnSave.Name = "BtnSave";
-            this.BtnSave.Size = new System.Drawing.Size(101, 23);
+            this.BtnSave.Size = new System.Drawing.Size(202, 44);
             this.BtnSave.TabIndex = 14;
             this.BtnSave.Text = "Save";
             this.BtnSave.UseVisualStyleBackColor = true;
@@ -69,36 +71,39 @@ namespace GlucoCheck.Forms
             // NumUpDownInsulinDosed
             // 
             this.NumUpDownInsulinDosed.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NumUpDownInsulinDosed.Location = new System.Drawing.Point(16, 210);
+            this.NumUpDownInsulinDosed.Location = new System.Drawing.Point(32, 404);
+            this.NumUpDownInsulinDosed.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.NumUpDownInsulinDosed.Maximum = new decimal(new int[] {
             30,
             0,
             0,
             0});
             this.NumUpDownInsulinDosed.Name = "NumUpDownInsulinDosed";
-            this.NumUpDownInsulinDosed.Size = new System.Drawing.Size(200, 26);
+            this.NumUpDownInsulinDosed.Size = new System.Drawing.Size(400, 44);
             this.NumUpDownInsulinDosed.TabIndex = 13;
             // 
             // NumUpDownCarbs
             // 
             this.NumUpDownCarbs.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NumUpDownCarbs.Location = new System.Drawing.Point(16, 121);
+            this.NumUpDownCarbs.Location = new System.Drawing.Point(32, 233);
+            this.NumUpDownCarbs.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.NumUpDownCarbs.Maximum = new decimal(new int[] {
             300,
             0,
             0,
             0});
             this.NumUpDownCarbs.Name = "NumUpDownCarbs";
-            this.NumUpDownCarbs.Size = new System.Drawing.Size(200, 26);
+            this.NumUpDownCarbs.Size = new System.Drawing.Size(400, 44);
             this.NumUpDownCarbs.TabIndex = 12;
             // 
             // Lbl3
             // 
             this.Lbl3.AutoSize = true;
             this.Lbl3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl3.Location = new System.Drawing.Point(12, 187);
+            this.Lbl3.Location = new System.Drawing.Point(24, 360);
+            this.Lbl3.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.Lbl3.Name = "Lbl3";
-            this.Lbl3.Size = new System.Drawing.Size(107, 20);
+            this.Lbl3.Size = new System.Drawing.Size(214, 37);
             this.Lbl3.TabIndex = 11;
             this.Lbl3.Text = "Insulin dosed:";
             // 
@@ -106,57 +111,62 @@ namespace GlucoCheck.Forms
             // 
             this.Lbl2.AutoSize = true;
             this.Lbl2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl2.Location = new System.Drawing.Point(12, 98);
+            this.Lbl2.Location = new System.Drawing.Point(24, 188);
+            this.Lbl2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.Lbl2.Name = "Lbl2";
-            this.Lbl2.Size = new System.Drawing.Size(55, 20);
+            this.Lbl2.Size = new System.Drawing.Size(112, 37);
             this.Lbl2.TabIndex = 10;
             this.Lbl2.Text = "Carbs:";
             // 
             // NumUpDownBSL
             // 
             this.NumUpDownBSL.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NumUpDownBSL.Location = new System.Drawing.Point(16, 32);
+            this.NumUpDownBSL.Location = new System.Drawing.Point(32, 62);
+            this.NumUpDownBSL.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.NumUpDownBSL.Maximum = new decimal(new int[] {
             400,
             0,
             0,
             0});
             this.NumUpDownBSL.Name = "NumUpDownBSL";
-            this.NumUpDownBSL.Size = new System.Drawing.Size(200, 26);
+            this.NumUpDownBSL.Size = new System.Drawing.Size(400, 44);
             this.NumUpDownBSL.TabIndex = 9;
             // 
             // Lbl1
             // 
             this.Lbl1.AutoSize = true;
             this.Lbl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl1.Location = new System.Drawing.Point(12, 9);
+            this.Lbl1.Location = new System.Drawing.Point(24, 17);
+            this.Lbl1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.Lbl1.Name = "Lbl1";
-            this.Lbl1.Size = new System.Drawing.Size(44, 20);
+            this.Lbl1.Size = new System.Drawing.Size(86, 37);
             this.Lbl1.TabIndex = 8;
             this.Lbl1.Text = "BSL:";
             // 
             // DTPEntryDate
             // 
-            this.DTPEntryDate.Location = new System.Drawing.Point(16, 299);
+            this.DTPEntryDate.Location = new System.Drawing.Point(32, 575);
+            this.DTPEntryDate.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.DTPEntryDate.Name = "DTPEntryDate";
-            this.DTPEntryDate.Size = new System.Drawing.Size(200, 20);
+            this.DTPEntryDate.Size = new System.Drawing.Size(396, 31);
             this.DTPEntryDate.TabIndex = 16;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 276);
+            this.label1.Location = new System.Drawing.Point(24, 531);
+            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(113, 20);
+            this.label1.Size = new System.Drawing.Size(225, 37);
             this.label1.TabIndex = 17;
             this.label1.Text = "Date and time:";
             // 
             // FrmEditEntry
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(234, 366);
+            this.ClientSize = new System.Drawing.Size(468, 704);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.DTPEntryDate);
             this.Controls.Add(this.BtnCancel);
@@ -168,8 +178,10 @@ namespace GlucoCheck.Forms
             this.Controls.Add(this.NumUpDownBSL);
             this.Controls.Add(this.Lbl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Name = "FrmEditEntry";
             this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Edit entry";
