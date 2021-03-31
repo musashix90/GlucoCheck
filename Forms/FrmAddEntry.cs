@@ -44,13 +44,12 @@ namespace GlucoCheck.Forms
                 InsulinDosed = (float)NumUpDownInsulinDosed.Value,
                 UserId = User.UserId
             };
-            
 
             // Update the database with the current entry object
             using (var db = new AppDbContext())
             {
                 var lastEntry = db.Log.OrderByDescending(l => l.Id).Take(1).SingleOrDefault();
-                if (DateTime.Today != lastEntry.EntryDate.Date)
+                if (lastEntry == null || DateTime.Today != lastEntry.EntryDate.Date)
                 {
                     Reminder rem2Hr = new Reminder(DateTime.Now.AddHours(settings.SecondEntryReminder), "REMINDER: It's time to do your 2nd reading.");
                     Reminder remDay = new Reminder(DateTime.Now.AddHours(settings.MaxDailyReminder), "REMINDER: It's time for your daily reading.");
