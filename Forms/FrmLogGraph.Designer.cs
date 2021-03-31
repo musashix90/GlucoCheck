@@ -98,6 +98,7 @@ namespace GlucoCheck.Forms
             this.Controls.Add(this.BSLChart);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FrmLogGraph";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmLogGraph";
             this.Load += new System.EventHandler(this.FrmLogGraph_Load);
             ((System.ComponentModel.ISupportInitialize)(this.BSLChart)).EndInit();
