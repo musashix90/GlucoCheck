@@ -27,6 +27,19 @@ namespace GlucoCheck.Forms
             FilterLog();
 
             DGVLogEntries.Columns["Id"].Visible = false;
+            DGVLogEntries.Columns["User"].Visible = false;
+            DGVLogEntries.Columns["UserId"].Visible = false;
+            DGVLogEntries.Columns["EntryDate"].Visible = false;
+
+            DGVLogEntries.Columns["BSL"].DisplayIndex = 0;
+            DGVLogEntries.Columns["Carbs"].DisplayIndex = 1;
+            DGVLogEntries.Columns["InsulinDosed"].DisplayIndex = 2;
+            DGVLogEntries.Columns["EasyDate"].DisplayIndex = 3;
+            DGVLogEntries.Columns["EasyTime"].DisplayIndex = 4;
+
+            DGVLogEntries.Columns["EasyDate"].HeaderText = "Date";
+            DGVLogEntries.Columns["EasyTime"].HeaderText = "Time";
+
             DGVLogEntries.AllowUserToAddRows = false;
 //            DGVLogEntries.CellEndEdit += new DataGridViewCellEventHandler(DataGridView_CellEndEdit);
 //            DGVLogEntries.CellValidating += new DataGridViewCellValidatingEventHandler(DataGridView_CellValidating);
