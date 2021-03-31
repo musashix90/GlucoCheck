@@ -10,7 +10,7 @@
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = true;
+//            AutomaticMigrationsEnabled = true;
 //            AutomaticMigrationDataLossAllowed = true;
             SetSqlGenerator("System.Data.SQLite", new SQLiteMigrationSqlGenerator());
         }
