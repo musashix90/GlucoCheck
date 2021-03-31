@@ -1,6 +1,8 @@
 ﻿using System;
 using GlucoCheck.Classes;
 using System.Windows.Forms;
+using System.Data;
+using System.Linq;
 
 namespace GlucoCheck.Forms
 {
@@ -9,6 +11,7 @@ namespace GlucoCheck.Forms
         #region Variables
 
         public User User { get; set; }
+        public Settings settings { get; set; }
 
         #endregion
 
@@ -21,7 +24,15 @@ namespace GlucoCheck.Forms
 
         private void FrmAddEntry_Load(object sender, EventArgs e)
         {
+            LoadSettings();
+        }
 
+        private void LoadSettings()
+        {
+            using (var db = new AppDbContext())
+            {
+                settings = db.Settings.Where(l => l.UserId == User.UserId).Single();
+            }
         }
 
         private void BtnAdd_Click(object sender, EventArgs e)
@@ -33,10 +44,20 @@ namespace GlucoCheck.Forms
                 InsulinDosed = (float)NumUpDownInsulinDosed.Value,
                 UserId = User.UserId
             };
+            
 
             // Update the database with the current entry object
             using (var db = new AppDbContext())
             {
+                var lastEntry = db.Log.OrderByDescending(l => l.Id).Take(1).SingleOrDefault();
+                if (DateTime.Today != lastEntry.EntryDate.Date)
+                {
+                    Reminder rem2Hr = new Reminder(DateTime.Now.AddHours(settings.SecondEntryReminder), "REMINDER: It's time to do your 2nd reading.");
+                    Reminder remDay = new Reminder(DateTime.Now.AddHours(settings.MaxDailyReminder), "REMINDER: It's time for your daily reading.");
+                    db.Reminder.Add(rem2Hr);
+                    db.Reminder.Add(remDay);
+                }
+
                 db.Log.Add(entry);
                 db.SaveChanges();
             }

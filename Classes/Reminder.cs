@@ -55,6 +55,12 @@ namespace GlucoCheck.Classes
 
         #region Constructors
 
+        public Reminder()
+        {
+            TimeToRemind = DateTime.Now;
+            TaskToRemind = "N/A";
+        }
+
         public Reminder(DateTime timeToRemind, string taskToRemind)
         {
             TimeToRemind = timeToRemind;

@@ -105,17 +105,26 @@ namespace GlucoCheck.Forms
 
         private void InitializeTimer()
         {
-            timer1.Interval = 10000;
+            timer1.Interval = 5000;
             timer1.Tick += new EventHandler(TimerTick);
             timer1.Enabled = true;
         }
 
         private void TimerTick(object sender, EventArgs e)
         {
-            Form reminderBox = new FrmReminder("this is a placeholder reminder");
-            reminderBox.ShowDialog();
+            using (var db = new AppDbContext())
+            {
+                if (db.Reminder.OrderBy(l => l.TimeToRemind).Take(1).SingleOrDefault() == null) return;
+                var nextReminder = db.Reminder.OrderBy(l => l.TimeToRemind).First();
 
-            timer1.Interval = 600000; // I added this line to show the reminder every 10 minutes so that you won't get spammed with reminders. I leave it going to prove that it works
+                if (DateTime.Compare(nextReminder.TimeToRemind, DateTime.Now) < 0)
+                {
+                    db.Reminder.Remove(nextReminder);
+                    db.SaveChanges();
+                    Form reminderBox = new FrmReminder(nextReminder.TaskToRemind);
+                    reminderBox.ShowDialog();
+                }
+            }
         }
 
         private void SettingsBtn_Click(object sender, EventArgs e)
