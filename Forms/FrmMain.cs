@@ -39,7 +39,9 @@ namespace GlucoCheck.Forms
 
         private void BtnViewGraph_Click(object sender, EventArgs e)
         {
-            Form logGraph = new FrmLogGraph();
+            FrmLogGraph logGraph = new FrmLogGraph();
+            logGraph.User = user;
+            logGraph.Settings = settings;
             logGraph.ShowDialog();
         }
 

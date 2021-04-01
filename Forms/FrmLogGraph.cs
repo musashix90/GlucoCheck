@@ -14,6 +14,9 @@ namespace GlucoCheck.Forms
 {
     public partial class FrmLogGraph : Form
     {
+        public Settings Settings { get; set; }
+        public User User { get; set; }
+
         public FrmLogGraph()
         {
             InitializeComponent();
@@ -48,8 +51,8 @@ namespace GlucoCheck.Forms
                 }
             }
 
-            int userBSLHigh = 180;
-            int userBSLLow = 130;
+            int userBSLHigh = (int)Settings.HighBSLThreshold;
+            int userBSLLow = (int)Settings.LowBSLThreshold;
 
             //Display Top and Bottom line for BSL user average
             StripLine HighLine = new StripLine();
