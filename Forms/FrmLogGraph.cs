@@ -82,7 +82,7 @@ namespace GlucoCheck.Forms
             DateTime currentDate = DateTime.Now.AddDays(1);
             BSLChart.ChartAreas["ChartArea1"].AxisX.Maximum = currentDate.ToOADate();
             DateTime minDate;
-
+            int rangeSize = 0; //Used for calculating average percent 
             switch (cbFilterDays.SelectedIndex)
             {
                 
@@ -90,21 +90,43 @@ namespace GlucoCheck.Forms
                     Console.WriteLine("30 days selected");
                     minDate = currentDate.AddDays(-30);
                     BSLChart.ChartAreas["ChartArea1"].AxisX.Minimum = minDate.ToOADate();
-//                    BSLChart.ChartAreas["ChartArea1"].AxisX.Interval = 1;
+                    
+                    //BSLChart.ChartAreas["ChartArea1"].AxisX.Interval = 1;
                     break;
                 case 1:
                     Console.WriteLine("60 days selected");
                     minDate = currentDate.AddDays(-60);
                     BSLChart.ChartAreas["ChartArea1"].AxisX.Minimum = minDate.ToOADate();
- //                   BSLChart.ChartAreas["ChartArea1"].AxisX.Interval = 2;
+                    //BSLChart.ChartAreas["ChartArea1"].AxisX.Interval = 2;
+
+                    rangeSize = 60;
                     break;
                 case 2:
                     Console.WriteLine("90 days selected");
                     minDate = currentDate.AddDays(-90);
                     BSLChart.ChartAreas["ChartArea1"].AxisX.Minimum = minDate.ToOADate();
- //                   BSLChart.ChartAreas["ChartArea1"].AxisX.Interval = 3;
+                    //BSLChart.ChartAreas["ChartArea1"].AxisX.Interval = 3;
+
+                    rangeSize = 90;
                     break;
             }
+
+            //Calculate in range average percent for selected day range.
+            int pointCount = BSLChart.Series["BSL"].Points.Count;
+            int cntDown = rangeSize;
+            int cntInRange = 0;
+            while (cntDown > 0 || pointCount >= 0)
+            {
+                double currentBSL = BSLChart.Series["BSL"].Points[pointCount].YValues[0];
+                if (currentBSL >= userBSLLow && currentBSL <= userBSLHigh)
+                {
+                    cntInRange++;
+                }
+                pointCount--;
+                cntDown--;
+            }
+            double percentInRange = (cntInRange / rangeSize) * 100;
+            rangeAverage.Text = percentInRange.ToString();
         }
     }
 }
