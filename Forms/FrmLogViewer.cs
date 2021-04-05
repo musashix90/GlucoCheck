@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Diagnostics;
 using GlucoCheck.Classes;
 using System.Windows.Forms;
 
@@ -69,6 +70,28 @@ namespace GlucoCheck.Forms
         {
             SetControlsToDefault();
             FilterLog();
+        }
+
+        private void BtnPrintLog_Click(object sender, EventArgs e)
+        {
+            //Get all the entries within the date rage.
+            using (var db = new AppDbContext())
+            {
+                var entries = db.Log.Where(l => l.EntryDate >= DTPFrom.Value)
+                    .Where(l => l.EntryDate <= DTPTo.Value)
+                    .OrderByDescending(l => l.EntryDate);
+
+
+                //Create a local HTML doc of the log.
+                string desktopPath = Environment.
+                    GetFolderPath(Environment.SpecialFolder.Desktop);
+
+                GCUtility.LogToHTMLDoc(entries.ToArray(), 
+                    desktopPath + "\\BSL log.html");
+
+                //Open the HTML doc so the user can print it.
+                Process.Start(desktopPath + "\\BSL log.html");
+            }
         }
 
         #endregion

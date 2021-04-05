@@ -46,6 +46,7 @@
             this.ComboxBSLFilter = new System.Windows.Forms.ComboBox();
             this.Lbl4 = new System.Windows.Forms.Label();
             this.Lbl1 = new System.Windows.Forms.Label();
+            this.BtnPrintLog = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DGVLogEntries)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SplContainerMain)).BeginInit();
             this.SplContainerMain.Panel1.SuspendLayout();
@@ -61,28 +62,25 @@
             this.DGVLogEntries.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGVLogEntries.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DGVLogEntries.Location = new System.Drawing.Point(0, 0);
-            this.DGVLogEntries.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.DGVLogEntries.Name = "DGVLogEntries";
             this.DGVLogEntries.RowHeadersWidth = 82;
-            this.DGVLogEntries.Size = new System.Drawing.Size(1036, 885);
+            this.DGVLogEntries.Size = new System.Drawing.Size(517, 456);
             this.DGVLogEntries.TabIndex = 0;
             // 
             // DTPFrom
             // 
-            this.DTPFrom.Location = new System.Drawing.Point(32, 129);
-            this.DTPFrom.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.DTPFrom.Location = new System.Drawing.Point(16, 67);
             this.DTPFrom.Name = "DTPFrom";
-            this.DTPFrom.Size = new System.Drawing.Size(444, 31);
+            this.DTPFrom.Size = new System.Drawing.Size(224, 20);
             this.DTPFrom.TabIndex = 1;
             // 
             // Lbl2
             // 
             this.Lbl2.AutoSize = true;
             this.Lbl2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl2.Location = new System.Drawing.Point(26, 92);
-            this.Lbl2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.Lbl2.Location = new System.Drawing.Point(13, 48);
             this.Lbl2.Name = "Lbl2";
-            this.Lbl2.Size = new System.Drawing.Size(81, 30);
+            this.Lbl2.Size = new System.Drawing.Size(42, 16);
             this.Lbl2.TabIndex = 3;
             this.Lbl2.Text = "From:";
             // 
@@ -90,19 +88,17 @@
             // 
             this.Lbl3.AutoSize = true;
             this.Lbl3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl3.Location = new System.Drawing.Point(26, 187);
-            this.Lbl3.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.Lbl3.Location = new System.Drawing.Point(13, 97);
             this.Lbl3.Name = "Lbl3";
-            this.Lbl3.Size = new System.Drawing.Size(50, 30);
+            this.Lbl3.Size = new System.Drawing.Size(28, 16);
             this.Lbl3.TabIndex = 4;
             this.Lbl3.Text = "To:";
             // 
             // DTPTo
             // 
-            this.DTPTo.Location = new System.Drawing.Point(32, 223);
-            this.DTPTo.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.DTPTo.Location = new System.Drawing.Point(16, 116);
             this.DTPTo.Name = "DTPTo";
-            this.DTPTo.Size = new System.Drawing.Size(444, 31);
+            this.DTPTo.Size = new System.Drawing.Size(224, 20);
             this.DTPTo.TabIndex = 5;
             // 
             // SplContainerMain
@@ -110,11 +106,11 @@
             this.SplContainerMain.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.SplContainerMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.SplContainerMain.Location = new System.Drawing.Point(0, 0);
-            this.SplContainerMain.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.SplContainerMain.Name = "SplContainerMain";
             // 
             // SplContainerMain.Panel1
             // 
+            this.SplContainerMain.Panel1.Controls.Add(this.BtnPrintLog);
             this.SplContainerMain.Panel1.Controls.Add(this.NumUDInsulinValue);
             this.SplContainerMain.Panel1.Controls.Add(this.ComboxInsulinFilter);
             this.SplContainerMain.Panel1.Controls.Add(this.Lbl6);
@@ -135,22 +131,20 @@
             // SplContainerMain.Panel2
             // 
             this.SplContainerMain.Panel2.Controls.Add(this.DGVLogEntries);
-            this.SplContainerMain.Size = new System.Drawing.Size(1568, 887);
-            this.SplContainerMain.SplitterDistance = 522;
-            this.SplContainerMain.SplitterWidth = 8;
+            this.SplContainerMain.Size = new System.Drawing.Size(784, 458);
+            this.SplContainerMain.SplitterDistance = 261;
             this.SplContainerMain.TabIndex = 6;
             // 
             // NumUDInsulinValue
             // 
-            this.NumUDInsulinValue.Location = new System.Drawing.Point(262, 598);
-            this.NumUDInsulinValue.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.NumUDInsulinValue.Location = new System.Drawing.Point(131, 311);
             this.NumUDInsulinValue.Maximum = new decimal(new int[] {
             50,
             0,
             0,
             0});
             this.NumUDInsulinValue.Name = "NumUDInsulinValue";
-            this.NumUDInsulinValue.Size = new System.Drawing.Size(218, 31);
+            this.NumUDInsulinValue.Size = new System.Drawing.Size(109, 20);
             this.NumUDInsulinValue.TabIndex = 17;
             this.NumUDInsulinValue.Value = new decimal(new int[] {
             5,
@@ -166,34 +160,31 @@
             "=",
             ">",
             "<"});
-            this.ComboxInsulinFilter.Location = new System.Drawing.Point(36, 596);
-            this.ComboxInsulinFilter.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.ComboxInsulinFilter.Location = new System.Drawing.Point(18, 310);
             this.ComboxInsulinFilter.Name = "ComboxInsulinFilter";
-            this.ComboxInsulinFilter.Size = new System.Drawing.Size(210, 33);
+            this.ComboxInsulinFilter.Size = new System.Drawing.Size(107, 21);
             this.ComboxInsulinFilter.TabIndex = 16;
             // 
             // Lbl6
             // 
             this.Lbl6.AutoSize = true;
             this.Lbl6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl6.Location = new System.Drawing.Point(30, 560);
-            this.Lbl6.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.Lbl6.Location = new System.Drawing.Point(15, 291);
             this.Lbl6.Name = "Lbl6";
-            this.Lbl6.Size = new System.Drawing.Size(252, 30);
+            this.Lbl6.Size = new System.Drawing.Size(133, 16);
             this.Lbl6.TabIndex = 15;
             this.Lbl6.Text = "Where insulin dosed:";
             // 
             // NumUDCarbsValue
             // 
-            this.NumUDCarbsValue.Location = new System.Drawing.Point(262, 481);
-            this.NumUDCarbsValue.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.NumUDCarbsValue.Location = new System.Drawing.Point(131, 250);
             this.NumUDCarbsValue.Maximum = new decimal(new int[] {
             500,
             0,
             0,
             0});
             this.NumUDCarbsValue.Name = "NumUDCarbsValue";
-            this.NumUDCarbsValue.Size = new System.Drawing.Size(218, 31);
+            this.NumUDCarbsValue.Size = new System.Drawing.Size(109, 20);
             this.NumUDCarbsValue.TabIndex = 14;
             this.NumUDCarbsValue.Value = new decimal(new int[] {
             50,
@@ -209,30 +200,27 @@
             "=",
             ">",
             "<"});
-            this.ComboxCarbsFilter.Location = new System.Drawing.Point(32, 479);
-            this.ComboxCarbsFilter.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.ComboxCarbsFilter.Location = new System.Drawing.Point(16, 249);
             this.ComboxCarbsFilter.Name = "ComboxCarbsFilter";
-            this.ComboxCarbsFilter.Size = new System.Drawing.Size(210, 33);
+            this.ComboxCarbsFilter.Size = new System.Drawing.Size(107, 21);
             this.ComboxCarbsFilter.TabIndex = 13;
             // 
             // Lbl5
             // 
             this.Lbl5.AutoSize = true;
             this.Lbl5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl5.Location = new System.Drawing.Point(30, 442);
-            this.Lbl5.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.Lbl5.Location = new System.Drawing.Point(15, 230);
             this.Lbl5.Name = "Lbl5";
-            this.Lbl5.Size = new System.Drawing.Size(166, 30);
+            this.Lbl5.Size = new System.Drawing.Size(88, 16);
             this.Lbl5.TabIndex = 12;
             this.Lbl5.Text = "Where carbs:";
             // 
             // BtnClearFilter
             // 
             this.BtnClearFilter.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnClearFilter.Location = new System.Drawing.Point(262, 813);
-            this.BtnClearFilter.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.BtnClearFilter.Location = new System.Drawing.Point(129, 389);
             this.BtnClearFilter.Name = "BtnClearFilter";
-            this.BtnClearFilter.Size = new System.Drawing.Size(218, 48);
+            this.BtnClearFilter.Size = new System.Drawing.Size(111, 25);
             this.BtnClearFilter.TabIndex = 11;
             this.BtnClearFilter.Text = "Clear filter";
             this.BtnClearFilter.UseVisualStyleBackColor = true;
@@ -241,10 +229,9 @@
             // BtnApplyFilter
             // 
             this.BtnApplyFilter.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnApplyFilter.Location = new System.Drawing.Point(32, 813);
-            this.BtnApplyFilter.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.BtnApplyFilter.Location = new System.Drawing.Point(16, 389);
             this.BtnApplyFilter.Name = "BtnApplyFilter";
-            this.BtnApplyFilter.Size = new System.Drawing.Size(218, 48);
+            this.BtnApplyFilter.Size = new System.Drawing.Size(107, 25);
             this.BtnApplyFilter.TabIndex = 10;
             this.BtnApplyFilter.Text = "Apply filter";
             this.BtnApplyFilter.UseVisualStyleBackColor = true;
@@ -252,8 +239,7 @@
             // 
             // NumUDBSLValue
             // 
-            this.NumUDBSLValue.Location = new System.Drawing.Point(258, 362);
-            this.NumUDBSLValue.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.NumUDBSLValue.Location = new System.Drawing.Point(129, 188);
             this.NumUDBSLValue.Maximum = new decimal(new int[] {
             999,
             0,
@@ -265,7 +251,7 @@
             0,
             0});
             this.NumUDBSLValue.Name = "NumUDBSLValue";
-            this.NumUDBSLValue.Size = new System.Drawing.Size(222, 31);
+            this.NumUDBSLValue.Size = new System.Drawing.Size(111, 20);
             this.NumUDBSLValue.TabIndex = 9;
             this.NumUDBSLValue.Value = new decimal(new int[] {
             100,
@@ -281,20 +267,18 @@
             "=",
             ">",
             "<"});
-            this.ComboxBSLFilter.Location = new System.Drawing.Point(32, 362);
-            this.ComboxBSLFilter.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.ComboxBSLFilter.Location = new System.Drawing.Point(16, 188);
             this.ComboxBSLFilter.Name = "ComboxBSLFilter";
-            this.ComboxBSLFilter.Size = new System.Drawing.Size(210, 33);
+            this.ComboxBSLFilter.Size = new System.Drawing.Size(107, 21);
             this.ComboxBSLFilter.TabIndex = 8;
             // 
             // Lbl4
             // 
             this.Lbl4.AutoSize = true;
             this.Lbl4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl4.Location = new System.Drawing.Point(26, 325);
-            this.Lbl4.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.Lbl4.Location = new System.Drawing.Point(13, 169);
             this.Lbl4.Name = "Lbl4";
-            this.Lbl4.Size = new System.Drawing.Size(151, 30);
+            this.Lbl4.Size = new System.Drawing.Size(79, 16);
             this.Lbl4.TabIndex = 7;
             this.Lbl4.Text = "Where BSL:";
             // 
@@ -302,21 +286,30 @@
             // 
             this.Lbl1.AutoSize = true;
             this.Lbl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl1.Location = new System.Drawing.Point(24, 17);
-            this.Lbl1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.Lbl1.Location = new System.Drawing.Point(12, 9);
             this.Lbl1.Name = "Lbl1";
-            this.Lbl1.Size = new System.Drawing.Size(201, 37);
+            this.Lbl1.Size = new System.Drawing.Size(100, 20);
             this.Lbl1.TabIndex = 6;
             this.Lbl1.Text = "Filter options";
             // 
+            // BtnPrintLog
+            // 
+            this.BtnPrintLog.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnPrintLog.Location = new System.Drawing.Point(16, 420);
+            this.BtnPrintLog.Name = "BtnPrintLog";
+            this.BtnPrintLog.Size = new System.Drawing.Size(224, 25);
+            this.BtnPrintLog.TabIndex = 18;
+            this.BtnPrintLog.Text = "Print log";
+            this.BtnPrintLog.UseVisualStyleBackColor = true;
+            this.BtnPrintLog.Click += new System.EventHandler(this.BtnPrintLog_Click);
+            // 
             // FrmLogViewer
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1568, 887);
+            this.ClientSize = new System.Drawing.Size(784, 458);
             this.Controls.Add(this.SplContainerMain);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.MaximizeBox = false;
             this.Name = "FrmLogViewer";
             this.ShowIcon = false;
@@ -358,5 +351,6 @@
         private System.Windows.Forms.NumericUpDown NumUDInsulinValue;
         private System.Windows.Forms.ComboBox ComboxInsulinFilter;
         private System.Windows.Forms.Label Lbl6;
+        private System.Windows.Forms.Button BtnPrintLog;
     }
 }
