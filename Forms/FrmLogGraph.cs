@@ -27,7 +27,15 @@ namespace GlucoCheck.Forms
         {
             BSLChart.Series["BSL"].MarkerStyle = MarkerStyle.Circle;
             BSLChart.Series["BSL"].XValueType = ChartValueType.DateTime;
-            BSLChart.ChartAreas["ChartArea1"].AxisX.IntervalType = DateTimeIntervalType.Days;
+
+            // scroll / zoom settings
+            BSLChart.ChartAreas["ChartArea1"].AxisX.ScrollBar.Enabled = true;
+            BSLChart.ChartAreas["ChartArea1"].AxisX.ScrollBar.ButtonStyle = ScrollBarButtonStyles.SmallScroll;
+            BSLChart.ChartAreas["ChartArea1"].AxisX.ScaleView.Zoom(DateTime.Now.AddDays(-7).ToOADate(), DateTime.Today.ToOADate());
+            BSLChart.ChartAreas["ChartArea1"].AxisX.ScaleView.SmallScrollSizeType = DateTimeIntervalType.Weeks;
+
+            // changed from DateTimeIntervalType.Days
+            BSLChart.ChartAreas["ChartArea1"].AxisX.IntervalType = DateTimeIntervalType.Auto;
             BSLChart.ChartAreas["ChartArea1"].AxisX.IntervalOffset = 0;
             // This can be changed to include the time with "hh:mm"
             // however, when IntervalType = DateTimeIntervalType.Auto,
@@ -82,19 +90,19 @@ namespace GlucoCheck.Forms
                     Console.WriteLine("30 days selected");
                     minDate = currentDate.AddDays(-30);
                     BSLChart.ChartAreas["ChartArea1"].AxisX.Minimum = minDate.ToOADate();
-                    BSLChart.ChartAreas["ChartArea1"].AxisX.Interval = 1;
+//                    BSLChart.ChartAreas["ChartArea1"].AxisX.Interval = 1;
                     break;
                 case 1:
                     Console.WriteLine("60 days selected");
                     minDate = currentDate.AddDays(-60);
                     BSLChart.ChartAreas["ChartArea1"].AxisX.Minimum = minDate.ToOADate();
-                    BSLChart.ChartAreas["ChartArea1"].AxisX.Interval = 2;
+ //                   BSLChart.ChartAreas["ChartArea1"].AxisX.Interval = 2;
                     break;
                 case 2:
                     Console.WriteLine("90 days selected");
                     minDate = currentDate.AddDays(-90);
                     BSLChart.ChartAreas["ChartArea1"].AxisX.Minimum = minDate.ToOADate();
-                    BSLChart.ChartAreas["ChartArea1"].AxisX.Interval = 3;
+ //                   BSLChart.ChartAreas["ChartArea1"].AxisX.Interval = 3;
                     break;
             }
         }
