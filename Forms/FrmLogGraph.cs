@@ -57,7 +57,6 @@ namespace GlucoCheck.Forms
                     point.SetValueXY(entry.EntryDate, entry.BSL);
                     point.ToolTip = entry.EasyDate + " at " + entry.EasyTime + ", " + entry.BSL + "mg/dl";
                     BSLChart.Series["BSL"].Points.Add(point);
-                    MessageBox.Show(BSLChart.Series["BSL"].Points.Count().ToString());
                 }
             }
 
