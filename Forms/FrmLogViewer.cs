@@ -89,6 +89,11 @@ namespace GlucoCheck.Forms
                 GCUtility.LogToHTMLDoc(entries.ToArray(), 
                     desktopPath + "\\BSL log.html");
 
+                //Display pop-up to user
+                MessageBox.Show("An HTML document of your log has been " +
+                    "created on your desktop. It will automatically be " +
+                    "opened so that you may print it.");
+
                 //Open the HTML doc so the user can print it.
                 Process.Start(desktopPath + "\\BSL log.html");
             }
