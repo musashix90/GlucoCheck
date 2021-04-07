@@ -29,12 +29,13 @@ namespace GlucoCheck.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title4 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.BSLChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.cbFilterDays = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.rangeAverage = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.BSLChart)).BeginInit();
             this.SuspendLayout();
             // 
@@ -43,26 +44,25 @@ namespace GlucoCheck.Forms
             this.BSLChart.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            chartArea4.Name = "ChartArea1";
-            this.BSLChart.ChartAreas.Add(chartArea4);
-            this.BSLChart.Location = new System.Drawing.Point(18, 178);
-            this.BSLChart.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            chartArea2.Name = "ChartArea1";
+            this.BSLChart.ChartAreas.Add(chartArea2);
+            this.BSLChart.Location = new System.Drawing.Point(12, 114);
             this.BSLChart.Name = "BSLChart";
-            series4.ChartArea = "ChartArea1";
-            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series4.Name = "BSL";
-            this.BSLChart.Series.Add(series4);
-            this.BSLChart.Size = new System.Drawing.Size(1164, 506);
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series2.Name = "BSL";
+            this.BSLChart.Series.Add(series2);
+            this.BSLChart.Size = new System.Drawing.Size(776, 324);
             this.BSLChart.TabIndex = 0;
             this.BSLChart.Text = "bslchart";
-            title4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            title4.Name = "Title1";
-            title4.Position.Auto = false;
-            title4.Position.Height = 90F;
-            title4.Position.Width = 5F;
-            title4.Text = "Blood Sugar Level";
-            title4.TextOrientation = System.Windows.Forms.DataVisualization.Charting.TextOrientation.Rotated270;
-            this.BSLChart.Titles.Add(title4);
+            title2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            title2.Name = "Title1";
+            title2.Position.Auto = false;
+            title2.Position.Height = 90F;
+            title2.Position.Width = 5F;
+            title2.Text = "Blood Sugar Level";
+            title2.TextOrientation = System.Windows.Forms.DataVisualization.Charting.TextOrientation.Rotated270;
+            this.BSLChart.Titles.Add(title2);
             // 
             // cbFilterDays
             // 
@@ -71,32 +71,40 @@ namespace GlucoCheck.Forms
             "Past 30 days...",
             "Past 60 days...",
             "Past 90 days..."});
-            this.cbFilterDays.Location = new System.Drawing.Point(54, 114);
-            this.cbFilterDays.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cbFilterDays.Location = new System.Drawing.Point(36, 73);
             this.cbFilterDays.Name = "cbFilterDays";
-            this.cbFilterDays.Size = new System.Drawing.Size(180, 33);
+            this.cbFilterDays.Size = new System.Drawing.Size(121, 24);
             this.cbFilterDays.TabIndex = 1;
             this.cbFilterDays.SelectedIndexChanged += new System.EventHandler(this.cbFilterDays_SelectedIndexChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(54, 83);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(36, 53);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(95, 25);
+            this.label1.Size = new System.Drawing.Size(62, 17);
             this.label1.TabIndex = 2;
             this.label1.Text = "Filter by:";
             // 
+            // rangeAverage
+            // 
+            this.rangeAverage.AutoSize = true;
+            this.rangeAverage.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rangeAverage.Location = new System.Drawing.Point(237, 61);
+            this.rangeAverage.Name = "rangeAverage";
+            this.rangeAverage.Size = new System.Drawing.Size(49, 36);
+            this.rangeAverage.TabIndex = 3;
+            this.rangeAverage.Text = "00";
+            // 
             // FrmLogGraph
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1200, 703);
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.rangeAverage);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cbFilterDays);
             this.Controls.Add(this.BSLChart);
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FrmLogGraph";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
@@ -114,5 +122,6 @@ namespace GlucoCheck.Forms
         private System.Windows.Forms.DataVisualization.Charting.Chart BSLChart;
         private System.Windows.Forms.ComboBox cbFilterDays;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label rangeAverage;
     }
 }

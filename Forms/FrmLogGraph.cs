@@ -17,11 +17,12 @@ namespace GlucoCheck.Forms
         public Settings Settings { get; set; }
         public User User { get; set; }
 
+        public int userBSLHigh;
+        public int userBSLLow;
+
         public FrmLogGraph()
         {
             InitializeComponent();
-            // Set cbFilterDays to default text
-            cbFilterDays.SelectedIndex = 0;
         }
         private void FrmLogGraph_Load(object sender, EventArgs e)
         {
@@ -59,8 +60,8 @@ namespace GlucoCheck.Forms
                 }
             }
 
-            int userBSLHigh = (int)Settings.HighBSLThreshold;
-            int userBSLLow = (int)Settings.LowBSLThreshold;
+            userBSLHigh = (int)Settings.HighBSLThreshold;
+            userBSLLow = (int)Settings.LowBSLThreshold;
 
             //Display Top and Bottom line for BSL user average
             StripLine HighLine = new StripLine();
@@ -75,6 +76,9 @@ namespace GlucoCheck.Forms
             HighLine.StripWidth = 1;
             HighLine.BackColor = Color.Red;
             BSLChart.ChartAreas["ChartArea1"].AxisY.StripLines.Add(HighLine);
+
+            // Set cbFilterDays to default text
+            cbFilterDays.SelectedIndex = 0;
         }
 
         private void cbFilterDays_SelectedIndexChanged(object sender, EventArgs e)
@@ -82,7 +86,7 @@ namespace GlucoCheck.Forms
             DateTime currentDate = DateTime.Now.AddDays(1);
             BSLChart.ChartAreas["ChartArea1"].AxisX.Maximum = currentDate.ToOADate();
             DateTime minDate;
-
+            int rangeSize = 0; //Used for calculating average percent 
             switch (cbFilterDays.SelectedIndex)
             {
                 
@@ -90,21 +94,49 @@ namespace GlucoCheck.Forms
                     Console.WriteLine("30 days selected");
                     minDate = currentDate.AddDays(-30);
                     BSLChart.ChartAreas["ChartArea1"].AxisX.Minimum = minDate.ToOADate();
-//                    BSLChart.ChartAreas["ChartArea1"].AxisX.Interval = 1;
+
+                    //BSLChart.ChartAreas["ChartArea1"].AxisX.Interval = 1;
+                    rangeSize = 30;
                     break;
                 case 1:
                     Console.WriteLine("60 days selected");
                     minDate = currentDate.AddDays(-60);
                     BSLChart.ChartAreas["ChartArea1"].AxisX.Minimum = minDate.ToOADate();
- //                   BSLChart.ChartAreas["ChartArea1"].AxisX.Interval = 2;
+                    //BSLChart.ChartAreas["ChartArea1"].AxisX.Interval = 2;
+
+                    rangeSize = 60;
                     break;
                 case 2:
                     Console.WriteLine("90 days selected");
                     minDate = currentDate.AddDays(-90);
                     BSLChart.ChartAreas["ChartArea1"].AxisX.Minimum = minDate.ToOADate();
- //                   BSLChart.ChartAreas["ChartArea1"].AxisX.Interval = 3;
+                    //BSLChart.ChartAreas["ChartArea1"].AxisX.Interval = 3;
+
+                    rangeSize = 90;
                     break;
             }
+
+            //Calculate in range average percent for selected day range.
+            int pointCount = BSLChart.Series["BSL"].Points.Count;
+            int cntInRange = 0;
+
+            for(int x = 0; x < pointCount; x++)
+            {
+                double currentBSL = BSLChart.Series["BSL"].Points[x].YValues[0];
+                if (currentBSL >= userBSLLow && currentBSL <= userBSLHigh)
+                {
+                    cntInRange++;
+                }
+            }
+
+            double percentInRange = 0.0;
+
+            if (pointCount > 0)
+            {
+                percentInRange = (cntInRange / (pointCount - 1)) * 100;
+            }
+
+            rangeAverage.Text = percentInRange.ToString() + "% in range";
         }
     }
 }
