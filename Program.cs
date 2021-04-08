@@ -21,6 +21,7 @@ namespace GlucoCheck
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            //TODO: show login page, hide main form?
             Application.Run(new FrmMain());
         }
     }
