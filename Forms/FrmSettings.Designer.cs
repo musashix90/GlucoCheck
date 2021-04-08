@@ -56,7 +56,7 @@ namespace GlucoCheck.Forms
             // HighThresholdTextBox
             // 
             this.HighThresholdTextBox.Location = new System.Drawing.Point(85, 75);
-            this.HighThresholdTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.HighThresholdTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.HighThresholdTextBox.Name = "HighThresholdTextBox";
             this.HighThresholdTextBox.Size = new System.Drawing.Size(132, 31);
             this.HighThresholdTextBox.TabIndex = 0;
@@ -74,7 +74,7 @@ namespace GlucoCheck.Forms
             // LowThresholdTextBox
             // 
             this.LowThresholdTextBox.Location = new System.Drawing.Point(359, 75);
-            this.LowThresholdTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.LowThresholdTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.LowThresholdTextBox.Name = "LowThresholdTextBox";
             this.LowThresholdTextBox.Size = new System.Drawing.Size(132, 31);
             this.LowThresholdTextBox.TabIndex = 2;
@@ -103,22 +103,23 @@ namespace GlucoCheck.Forms
             // 
             this.MmolButton.AutoSize = true;
             this.MmolButton.Location = new System.Drawing.Point(8, 50);
-            this.MmolButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MmolButton.Margin = new System.Windows.Forms.Padding(4);
             this.MmolButton.Name = "MmolButton";
             this.MmolButton.Size = new System.Drawing.Size(305, 29);
             this.MmolButton.TabIndex = 7;
             this.MmolButton.TabStop = true;
             this.MmolButton.Text = "Millimoles per liter (mmol/L)";
             this.MmolButton.UseVisualStyleBackColor = true;
+            this.MmolButton.CheckedChanged += new System.EventHandler(this.MmolButton_CheckedChanged);
             // 
             // MeasurementGroupBox
             // 
             this.MeasurementGroupBox.Controls.Add(this.MgButton);
             this.MeasurementGroupBox.Controls.Add(this.MmolButton);
             this.MeasurementGroupBox.Location = new System.Drawing.Point(21, 164);
-            this.MeasurementGroupBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MeasurementGroupBox.Margin = new System.Windows.Forms.Padding(4);
             this.MeasurementGroupBox.Name = "MeasurementGroupBox";
-            this.MeasurementGroupBox.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MeasurementGroupBox.Padding = new System.Windows.Forms.Padding(4);
             this.MeasurementGroupBox.Size = new System.Drawing.Size(368, 129);
             this.MeasurementGroupBox.TabIndex = 8;
             this.MeasurementGroupBox.TabStop = false;
@@ -128,20 +129,21 @@ namespace GlucoCheck.Forms
             // 
             this.MgButton.AutoSize = true;
             this.MgButton.Location = new System.Drawing.Point(8, 88);
-            this.MgButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MgButton.Margin = new System.Windows.Forms.Padding(4);
             this.MgButton.Name = "MgButton";
             this.MgButton.Size = new System.Drawing.Size(337, 29);
             this.MgButton.TabIndex = 9;
             this.MgButton.TabStop = true;
             this.MgButton.Text = "Milligrams per deciliter (mg/dL)";
             this.MgButton.UseVisualStyleBackColor = true;
+            this.MgButton.CheckedChanged += new System.EventHandler(this.MgButton_CheckedChanged);
             // 
             // StartTimePicker
             // 
             this.StartTimePicker.CustomFormat = "hh:mm tt";
             this.StartTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.StartTimePicker.Location = new System.Drawing.Point(85, 370);
-            this.StartTimePicker.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.StartTimePicker.Margin = new System.Windows.Forms.Padding(4);
             this.StartTimePicker.Name = "StartTimePicker";
             this.StartTimePicker.ShowUpDown = true;
             this.StartTimePicker.Size = new System.Drawing.Size(183, 31);
@@ -183,7 +185,7 @@ namespace GlucoCheck.Forms
             this.EndTimePicker.CustomFormat = "hh:mm tt";
             this.EndTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.EndTimePicker.Location = new System.Drawing.Point(359, 369);
-            this.EndTimePicker.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.EndTimePicker.Margin = new System.Windows.Forms.Padding(4);
             this.EndTimePicker.Name = "EndTimePicker";
             this.EndTimePicker.ShowUpDown = true;
             this.EndTimePicker.Size = new System.Drawing.Size(191, 31);
@@ -223,7 +225,7 @@ namespace GlucoCheck.Forms
             // DailyReminderUpDown
             // 
             this.DailyReminderUpDown.Location = new System.Drawing.Point(429, 492);
-            this.DailyReminderUpDown.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DailyReminderUpDown.Margin = new System.Windows.Forms.Padding(4);
             this.DailyReminderUpDown.Maximum = new decimal(new int[] {
             24,
             0,
@@ -236,7 +238,7 @@ namespace GlucoCheck.Forms
             // SecondReminderUpDown
             // 
             this.SecondReminderUpDown.Location = new System.Drawing.Point(523, 530);
-            this.SecondReminderUpDown.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.SecondReminderUpDown.Margin = new System.Windows.Forms.Padding(4);
             this.SecondReminderUpDown.Maximum = new decimal(new int[] {
             24,
             0,
@@ -249,7 +251,7 @@ namespace GlucoCheck.Forms
             // SaveBtn
             // 
             this.SaveBtn.Location = new System.Drawing.Point(21, 598);
-            this.SaveBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.SaveBtn.Margin = new System.Windows.Forms.Padding(4);
             this.SaveBtn.Name = "SaveBtn";
             this.SaveBtn.Size = new System.Drawing.Size(265, 51);
             this.SaveBtn.TabIndex = 19;
@@ -279,7 +281,7 @@ namespace GlucoCheck.Forms
             this.Controls.Add(this.LowThresholdTextBox);
             this.Controls.Add(this.HighThresholdLabel);
             this.Controls.Add(this.HighThresholdTextBox);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmSettings";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;

@@ -34,8 +34,8 @@ namespace GlucoCheck.Forms
 
         private void FrmSettings_Load(object sender, EventArgs e)
         {
-            HighThresholdTextBox.Text = settings.HighBSLThreshold.ToString();
-            LowThresholdTextBox.Text = settings.LowBSLThreshold.ToString();
+            HighThresholdTextBox.Text = settings.IsMillimoles ? Math.Round((decimal)settings.HighBSLThreshold / 18, 1).ToString() : settings.HighBSLThreshold.ToString();
+            LowThresholdTextBox.Text = settings.IsMillimoles ? Math.Round((decimal)settings.LowBSLThreshold / 18, 1).ToString() : settings.LowBSLThreshold.ToString();
             MmolButton.Checked = settings.IsMillimoles;
             MgButton.Checked = !settings.IsMillimoles;
 
@@ -80,8 +80,8 @@ namespace GlucoCheck.Forms
 
             Settings editedSettings = new Settings()
             {
-                HighBSLThreshold = double.Parse(HighThresholdTextBox.Text),
-                LowBSLThreshold = double.Parse(LowThresholdTextBox.Text),
+                HighBSLThreshold = MmolButton.Checked && double.Parse(HighThresholdTextBox.Text) < 27 ? double.Parse(HighThresholdTextBox.Text)*18 : double.Parse(HighThresholdTextBox.Text),
+                LowBSLThreshold = MmolButton.Checked && double.Parse(LowThresholdTextBox.Text) < 27 ? double.Parse(LowThresholdTextBox.Text)*18 : double.Parse(LowThresholdTextBox.Text),
                 IsMillimoles = MmolButton.Checked,
                 ActiveStart = activeStart,
                 ActiveEnd = activeEnd,
@@ -116,6 +116,30 @@ namespace GlucoCheck.Forms
         private void EndTimePicker_MouseDown(object sender, MouseEventArgs e)
         {
             EndTimePicker.CustomFormat = "hh:mm tt";
+        }
+
+        private void MmolButton_CheckedChanged(object sender, EventArgs e)
+        {
+            if (double.Parse(HighThresholdTextBox.Text) > 27)
+            {
+                HighThresholdTextBox.Text = Math.Round(double.Parse(HighThresholdTextBox.Text) / 18, 1).ToString();
+            }
+            if (double.Parse(LowThresholdTextBox.Text) > 27)
+            {
+                LowThresholdTextBox.Text = Math.Round(double.Parse(LowThresholdTextBox.Text) / 18, 1).ToString();
+            }
+        }
+
+        private void MgButton_CheckedChanged(object sender, EventArgs e)
+        {
+            if (double.Parse(HighThresholdTextBox.Text) <= 27)
+            {
+                HighThresholdTextBox.Text = Math.Round(double.Parse(HighThresholdTextBox.Text) * 18, 0).ToString();
+            }
+            if (double.Parse(LowThresholdTextBox.Text) <= 27)
+            {
+                LowThresholdTextBox.Text = Math.Round(double.Parse(LowThresholdTextBox.Text) * 18, 0).ToString();
+            }
         }
     }
 }
