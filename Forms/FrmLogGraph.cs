@@ -17,8 +17,8 @@ namespace GlucoCheck.Forms
         public Settings Settings { get; set; }
         public User User { get; set; }
 
-        public int userBSLHigh;
-        public int userBSLLow;
+        public decimal userBSLHigh;
+        public decimal userBSLLow;
 
         public FrmLogGraph()
         {
@@ -42,8 +42,8 @@ namespace GlucoCheck.Forms
             // however, when IntervalType = DateTimeIntervalType.Auto,
             // the label tends to show "yyyy-MM-dd 12:00" each interval
             BSLChart.ChartAreas["ChartArea1"].AxisX.LabelStyle.Format = "yyyy-MM-dd";
-            BSLChart.ChartAreas["ChartArea1"].AxisY.Minimum = 50;
-            BSLChart.ChartAreas["ChartArea1"].AxisY.Maximum = 315;
+            BSLChart.ChartAreas["ChartArea1"].AxisY.Minimum = Settings.IsMillimoles ? 50/18 : 50;
+            BSLChart.ChartAreas["ChartArea1"].AxisY.Maximum = Settings.IsMillimoles ? 315/18 : 315;
             BSLChart.ChartAreas["ChartArea1"].AxisX.MajorGrid.LineColor = Color.Gainsboro;
             BSLChart.ChartAreas["ChartArea1"].AxisY.MajorGrid.LineColor = Color.Gainsboro;
 
@@ -54,26 +54,26 @@ namespace GlucoCheck.Forms
                 //foreach (var entry in db.Log.Where(l => l.EntryDate >= fromDate).OrderByDescending(l => l.Id)) {
                 foreach (var entry in db.Log.OrderByDescending(l => l.Id)) {
                     DataPoint point = new DataPoint();
-                    point.SetValueXY(entry.EntryDate, entry.BSL);
-                    point.ToolTip = entry.EasyDate + " at " + entry.EasyTime + ", " + entry.BSL + "mg/dl";
+                    point.SetValueXY(entry.EntryDate, (Settings.IsMillimoles ? Math.Round((decimal)entry.BSL/18, 1) : entry.BSL));
+                    point.ToolTip = entry.EasyDate + " at " + entry.EasyTime + ", " + (Settings.IsMillimoles ? Math.Round((decimal)entry.BSL/18, 1) : entry.BSL) + "mg/dl";
                     BSLChart.Series["BSL"].Points.Add(point);
                 }
             }
 
-            userBSLHigh = (int)Settings.HighBSLThreshold;
-            userBSLLow = (int)Settings.LowBSLThreshold;
+            userBSLHigh = Settings.IsMillimoles ? Math.Round((decimal)Settings.HighBSLThreshold/18, 1) : (int)Settings.HighBSLThreshold;
+            userBSLLow = Settings.IsMillimoles ? Math.Round((decimal)Settings.LowBSLThreshold/18, 1) : (int)Settings.LowBSLThreshold;
 
             //Display Top and Bottom line for BSL user average
             StripLine HighLine = new StripLine();
             StripLine LowLine = new StripLine();
             LowLine.Interval = 0;
-            LowLine.IntervalOffset = userBSLLow;
-            LowLine.StripWidth = 1;
+            LowLine.IntervalOffset = (double)userBSLLow;
+            LowLine.StripWidth = Settings.IsMillimoles ? 0.0625 : 1;
             LowLine.BackColor = Color.Red;
             BSLChart.ChartAreas["ChartArea1"].AxisY.StripLines.Add(LowLine);
             HighLine.Interval = 0;
-            HighLine.IntervalOffset = userBSLHigh;
-            HighLine.StripWidth = 1;
+            HighLine.IntervalOffset = (double)userBSLHigh;
+            HighLine.StripWidth = Settings.IsMillimoles ? 0.0625 : 1;
             HighLine.BackColor = Color.Red;
             BSLChart.ChartAreas["ChartArea1"].AxisY.StripLines.Add(HighLine);
 
@@ -123,13 +123,13 @@ namespace GlucoCheck.Forms
             for(int x = 0; x < pointCount; x++)
             {
                 double currentBSL = BSLChart.Series["BSL"].Points[x].YValues[0];
-                if (currentBSL >= userBSLLow && currentBSL <= userBSLHigh)
+                if (currentBSL >= (double)userBSLLow && currentBSL <= (double)userBSLHigh)
                 {
                     cntInRange++;
                 }
             }
 
-            double percentInRange = 0.0;
+            int percentInRange = 0;
 
             if (pointCount > 0)
             {
