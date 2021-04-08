@@ -58,12 +58,16 @@ namespace GlucoCheck.Forms
                 var lastEntry = db.Log.OrderByDescending(l => l.Id).Take(1).SingleOrDefault();
                 if (lastEntry != null)
                 {
-                    float lastBSL = lastEntry.BSL;
+                    double lastBSL = lastEntry.BSL;
+                    string measurement = "mg/dL";
                     if (settings.IsMillimoles)
                     {
                         lastBSL /= 18;
+                        lastBSL = Math.Round(lastBSL, 1);
+
+                        measurement = "mmol/L";
                     }
-                    LblLastEntry.Text = lastBSL.ToString();
+                    LblLastEntry.Text = lastBSL.ToString() + " " + measurement;
                     LblLastEntryDate.Text = lastEntry.EasyDate.ToString() + " at " + lastEntry.EasyTime.ToString();
                 }
             }
