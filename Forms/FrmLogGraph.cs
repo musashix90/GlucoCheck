@@ -42,23 +42,11 @@ namespace GlucoCheck.Forms
             // however, when IntervalType = DateTimeIntervalType.Auto,
             // the label tends to show "yyyy-MM-dd 12:00" each interval
             BSLChart.ChartAreas["ChartArea1"].AxisX.LabelStyle.Format = "yyyy-MM-dd";
-            BSLChart.ChartAreas["ChartArea1"].AxisY.Minimum = Settings.IsMillimoles ? 50/18 : 50;
-            BSLChart.ChartAreas["ChartArea1"].AxisY.Maximum = Settings.IsMillimoles ? 315/18 : 315;
+            BSLChart.ChartAreas["ChartArea1"].AxisY.Minimum = Settings.IsMillimoles ? 0 : 0;
+            BSLChart.ChartAreas["ChartArea1"].AxisY.Maximum = Settings.IsMillimoles ? 500 / 18 : 500;
+
             BSLChart.ChartAreas["ChartArea1"].AxisX.MajorGrid.LineColor = Color.Gainsboro;
             BSLChart.ChartAreas["ChartArea1"].AxisY.MajorGrid.LineColor = Color.Gainsboro;
-
-            var fromDate = DateTime.Now.AddDays(-7);
-
-            using (var db = new AppDbContext())
-            {
-                //foreach (var entry in db.Log.Where(l => l.EntryDate >= fromDate).OrderByDescending(l => l.Id)) {
-                foreach (var entry in db.Log.OrderByDescending(l => l.Id)) {
-                    DataPoint point = new DataPoint();
-                    point.SetValueXY(entry.EntryDate, (Settings.IsMillimoles ? Math.Round((decimal)entry.BSL/18, 1) : entry.BSL));
-                    point.ToolTip = entry.EasyDate + " at " + entry.EasyTime + ", " + (Settings.IsMillimoles ? Math.Round((decimal)entry.BSL/18, 1) : entry.BSL) + "mg/dl";
-                    BSLChart.Series["BSL"].Points.Add(point);
-                }
-            }
 
             userBSLHigh = Settings.IsMillimoles ? Math.Round((decimal)Settings.HighBSLThreshold/18, 1) : (int)Settings.HighBSLThreshold;
             userBSLLow = Settings.IsMillimoles ? Math.Round((decimal)Settings.LowBSLThreshold/18, 1) : (int)Settings.LowBSLThreshold;
@@ -116,9 +104,11 @@ namespace GlucoCheck.Forms
                     break;
             }
 
+            RefreshDataPoints(rangeSize);
+
             //Calculate in range average percent for selected day range.
-            int pointCount = BSLChart.Series["BSL"].Points.Count;
-            int cntInRange = 0;
+            double pointCount = BSLChart.Series["BSL"].Points.Count;
+            double cntInRange = 0;
 
             for(int x = 0; x < pointCount; x++)
             {
@@ -129,14 +119,33 @@ namespace GlucoCheck.Forms
                 }
             }
 
-            int percentInRange = 0;
+           double percentInRange = 0;
 
             if (pointCount > 0)
             {
                 percentInRange = (cntInRange / (pointCount - 1)) * 100;
             }
 
-            rangeAverage.Text = percentInRange.ToString() + "% in range";
+            rangeAverage.Text = Math.Round(percentInRange, 0).ToString() + "% in range";
+        }
+
+        void RefreshDataPoints(int rangeSize)
+        {
+            var fromDate = DateTime.Now.AddDays(-rangeSize);
+
+            BSLChart.Series["BSL"].Points.Clear();
+
+            using (var db = new AppDbContext())
+            {
+                //foreach (var entry in db.Log.Where(l => l.EntryDate >= fromDate).OrderByDescending(l => l.Id)) {
+                foreach (var entry in db.Log.Where(l => l.EntryDate >= fromDate).OrderByDescending(l => l.EntryDate))
+                {
+                    DataPoint point = new DataPoint();
+                    point.SetValueXY(entry.EntryDate, (Settings.IsMillimoles ? Math.Round((decimal)entry.BSL / 18, 1) : entry.BSL));
+                    point.ToolTip = entry.EasyDate + " at " + entry.EasyTime + ", " + (Settings.IsMillimoles ? Math.Round((decimal)entry.BSL / 18, 1) : entry.BSL) + "mg/dl";
+                    BSLChart.Series["BSL"].Points.Add(point);
+                }
+            }
         }
     }
 }
