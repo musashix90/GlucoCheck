@@ -142,5 +142,11 @@ namespace GlucoCheck.Forms
             CheckSettings();
             RefreshLastEntry();
         }
+
+        private void BtnSearch_Click(object sender, EventArgs e)
+        {
+            FrmFoodSearch frmFoodSearch = new FrmFoodSearch();
+            frmFoodSearch.ShowDialog();
+        }
     }
 }
