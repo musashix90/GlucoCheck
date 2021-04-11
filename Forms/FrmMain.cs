@@ -46,7 +46,8 @@ namespace GlucoCheck.Forms
 
         private void BtnViewLog_Click(object sender, EventArgs e)
         {
-            Form logViewer = new FrmLogViewer();
+            FrmLogViewer logViewer = new FrmLogViewer();
+            logViewer.user = user;
             logViewer.ShowDialog();
         }
 

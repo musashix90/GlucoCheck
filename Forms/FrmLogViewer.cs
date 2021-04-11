@@ -8,6 +8,8 @@ namespace GlucoCheck.Forms
 {
     public partial class FrmLogViewer : Form
     {
+        public User user { get; set; }
+
         public FrmLogViewer()
         {
             InitializeComponent();
@@ -130,7 +132,7 @@ namespace GlucoCheck.Forms
             using (var db = new AppDbContext())
             {
                 //Filter the log entires by the from and to dates.
-                var entries = db.Log.Where(l => l.EntryDate >= DTPFrom.Value)
+                var entries = db.Log.Where(l => l.UserId.Equals(user.UserId) && l.EntryDate >= DTPFrom.Value)
                     .Where(l => l.EntryDate <= DTPTo.Value);
                 
                 switch (ComboxBSLFilter.SelectedIndex)

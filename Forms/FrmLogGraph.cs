@@ -138,7 +138,7 @@ namespace GlucoCheck.Forms
             using (var db = new AppDbContext())
             {
                 //foreach (var entry in db.Log.Where(l => l.EntryDate >= fromDate).OrderByDescending(l => l.Id)) {
-                foreach (var entry in db.Log.Where(l => l.EntryDate >= fromDate).OrderByDescending(l => l.EntryDate))
+                foreach (var entry in db.Log.Where(l => l.EntryDate >= fromDate && l.UserId.Equals(User.UserId)).OrderByDescending(l => l.EntryDate))
                 {
                     DataPoint point = new DataPoint();
                     point.SetValueXY(entry.EntryDate, (Settings.IsMillimoles ? Math.Round((decimal)entry.BSL / 18, 1) : entry.BSL));

@@ -48,7 +48,7 @@ namespace GlucoCheck.Forms
             // Update the database with the current entry object
             using (var db = new AppDbContext())
             {
-                var lastEntry = db.Log.OrderByDescending(l => l.Id).Take(1).SingleOrDefault();
+                var lastEntry = db.Log.Where(l => l.UserId.Equals(User.UserId)).OrderByDescending(l => l.Id).Take(1).SingleOrDefault();
                 if (lastEntry == null || DateTime.Today != lastEntry.EntryDate.Date)
                 {
                     Reminder rem2Hr = new Reminder(DateTime.Now.AddHours(settings.SecondEntryReminder), "REMINDER: It's time to do your 2nd reading.");
