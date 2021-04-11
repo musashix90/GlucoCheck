@@ -12,6 +12,10 @@ namespace GlucoCheck.Classes
         [Key]
         public long Id { get; set; }
 
+        [ForeignKey("User")]
+        public string UserId { get; set; }
+        public User User { get; set; }
+
         /// <summary>
         /// The actual task the user is being reminded of.
         /// </summary>
@@ -62,8 +66,9 @@ namespace GlucoCheck.Classes
             TaskToRemind = "N/A";
         }
 
-        public Reminder(DateTime timeToRemind, string taskToRemind)
+        public Reminder(String userId, DateTime timeToRemind, string taskToRemind)
         {
+            UserId = userId;
             TimeToRemind = timeToRemind;
             TaskToRemind = taskToRemind;
         }

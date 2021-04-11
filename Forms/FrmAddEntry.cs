@@ -51,8 +51,8 @@ namespace GlucoCheck.Forms
                 var lastEntry = db.Log.Where(l => l.UserId.Equals(User.UserId)).OrderByDescending(l => l.Id).Take(1).SingleOrDefault();
                 if (lastEntry == null || DateTime.Today != lastEntry.EntryDate.Date)
                 {
-                    Reminder rem2Hr = new Reminder(DateTime.Now.AddHours(settings.SecondEntryReminder), "REMINDER: It's time to do your 2nd reading.");
-                    Reminder remDay = new Reminder(DateTime.Now.AddHours(settings.MaxDailyReminder), "REMINDER: It's time for your daily reading.");
+                    Reminder rem2Hr = new Reminder(User.UserId, DateTime.Now.AddHours(settings.SecondEntryReminder), "REMINDER: It's time to do your 2nd reading.");
+                    Reminder remDay = new Reminder(User.UserId, DateTime.Now.AddHours(settings.MaxDailyReminder), "REMINDER: It's time for your daily reading.");
                     db.Reminder.Add(rem2Hr);
                     db.Reminder.Add(remDay);
                 }

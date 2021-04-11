@@ -77,7 +77,7 @@ namespace GlucoCheck.Forms
         {
             using (var db = new AppDbContext())
             {
-                if (db.Settings.Where(l => l.UserId == user.UserId).Count() == 0)
+                if (db.Settings.Where(l => l.UserId.Equals(user.UserId)).Count() == 0)
                 {
                     MessageBox.Show("Please update your settings before proceeding.");
                     FrmSettings frmSettings = new FrmSettings();
@@ -103,8 +103,8 @@ namespace GlucoCheck.Forms
         {
             using (var db = new AppDbContext())
             {
-                if (db.Reminder.OrderBy(l => l.TimeToRemind).Take(1).SingleOrDefault() == null) return;
-                var nextReminder = db.Reminder.OrderBy(l => l.TimeToRemind).First();
+                if (db.Reminder.Where(l => l.UserId.Equals(user.UserId)).OrderBy(l => l.TimeToRemind).Take(1).SingleOrDefault() == null) return;
+                var nextReminder = db.Reminder.Where(l => l.UserId.Equals(user.UserId)).OrderBy(l => l.TimeToRemind).First();
 
                 if (DateTime.Compare(nextReminder.TimeToRemind, DateTime.Now) < 0)
                 {
