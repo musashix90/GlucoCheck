@@ -13,7 +13,7 @@ namespace GlucoCheck.Forms
 {
     public partial class FrmMain : Form
     {
-        public static User user;
+        public User user = null;
         public static Settings settings = new Settings();
 
         public FrmMain()
@@ -79,7 +79,7 @@ namespace GlucoCheck.Forms
             {
                 if (db.User.Count() == 0)
                 {
-                    user = new User("New", "User", "", "", "", "", DateTime.Today, 0, 0);
+                    user = new User("test", "New", "User", "", "", "", "", DateTime.Today);
                     db.User.Add(user);
                     db.SaveChanges();
                 }
