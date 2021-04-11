@@ -15,6 +15,7 @@ namespace GlucoCheck.Classes
         [Key]
         public string UserId { get; set; }
 
+        public string UserName { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Password { get; set; }
@@ -25,12 +26,6 @@ namespace GlucoCheck.Classes
         public DateTime BirthDate { get; set; }
         public float Weight { get; set; }
         public int Phone { get; set; }
-
-        [NotMapped]
-        int BSLHigh { get; set; }
-
-        [NotMapped]
-        int BSLLow { get; set; }
 
         [NotMapped]
         LogEntry[] AllLogs { get; set; }
@@ -45,18 +40,17 @@ namespace GlucoCheck.Classes
         }
 
         // Call constructor after user signs up.
-        public User(string FirstName, string LastName, string Password, string SecurityQuestion, string SecurityAnswer, string Gender, DateTime BirthDate, int BSLHigh, int BSLLow)
+        public User(String UserName, string FirstName, string LastName, string Password, string SecurityQuestion, string SecurityAnswer, string Gender, DateTime BirthDate)
         {
             Guid guid = Guid.NewGuid();
             this.UserId = guid.ToString();
+            this.UserName = UserName;
             this.FirstName = FirstName;
             this.LastName = LastName;
             this.Password = Password;
             this.SecurityQuestion = SecurityQuestion;
             this.Gender = Gender;
             this.BirthDate = BirthDate;
-            this.BSLHigh = BSLHigh;
-            this.BSLLow = BSLLow;
         }
 
         public void EditProfile()

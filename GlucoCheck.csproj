@@ -203,6 +203,10 @@
     <Compile Include="Migrations\202103312204398_InitialReminders.designer.cs">
       <DependentUpon>202103312204398_InitialReminders.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202104111940436_AddUserNameToUser.cs" />
+    <Compile Include="Migrations\202104111940436_AddUserNameToUser.designer.cs">
+      <DependentUpon>202104111940436_AddUserNameToUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -250,6 +254,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202103312204398_InitialReminders.resx">
       <DependentUpon>202103312204398_InitialReminders.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104111940436_AddUserNameToUser.resx">
+      <DependentUpon>202104111940436_AddUserNameToUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
