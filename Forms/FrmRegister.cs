@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using GlucoCheck.Classes;
+using BCrypt.Net;
 
 namespace GlucoCheck.Forms
 {
@@ -14,6 +16,7 @@ namespace GlucoCheck.Forms
     {
         private string username;
         private string password;
+        public User user { get; set; }
 
         public FrmRegister()
         {
@@ -24,6 +27,7 @@ namespace GlucoCheck.Forms
         {
             this.username = username;
             this.password = password;
+            InitializeComponent();
         }
 
         private void FrmRegister_Load(object sender, EventArgs e)
@@ -40,8 +44,17 @@ namespace GlucoCheck.Forms
             var lastName = LastNameTextbox.Text;
             var dateOfBirth = DOBPicker.Value;
 
+            var npassword = BCrypt.Net.BCrypt.HashPassword(password);
+
             //TODO: Save user to database
+            using (var db = new AppDbContext())
+            {
+                user = new User(username, firstName, lastName, npassword, "", "", "", dateOfBirth);
+                db.User.Add(user);
+                db.SaveChanges();
+            }
             //TODO: Go to main form
+            DialogResult = DialogResult.OK;
         }
     }
 }

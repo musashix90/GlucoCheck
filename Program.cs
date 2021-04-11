@@ -22,7 +22,22 @@ namespace GlucoCheck
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //TODO: show login page, hide main form?
-            Application.Run(new FrmMain());
+
+            User user = null;
+            DialogResult result;
+            using (var loginForm = new FrmLogin())
+            {
+                result = loginForm.ShowDialog();
+                user = loginForm.user;
+            }
+            if (result == DialogResult.OK)
+            {
+                // login was successful
+                FrmMain mainForm = new FrmMain();
+                mainForm.user = user;
+                Application.Run(mainForm);
+            }
+
         }
     }
 }

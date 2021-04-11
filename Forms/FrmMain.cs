@@ -23,7 +23,6 @@ namespace GlucoCheck.Forms
 
         private void FrmMain_Load(object sender, EventArgs e)
         {
-            AddOrFetchUser();
             CheckSettings();
             RefreshLastEntry();
             InitializeTimer();
@@ -55,7 +54,7 @@ namespace GlucoCheck.Forms
         {
             using (var db = new AppDbContext())
             {
-                var lastEntry = db.Log.OrderByDescending(l => l.Id).Take(1).SingleOrDefault();
+                var lastEntry = db.Log.Where(l => l.UserId.Equals(user.UserId)).OrderByDescending(l => l.Id).Take(1).SingleOrDefault();
                 if (lastEntry != null)
                 {
                     double lastBSL = lastEntry.BSL;
@@ -69,23 +68,6 @@ namespace GlucoCheck.Forms
                     }
                     LblLastEntry.Text = lastBSL.ToString() + " " + measurement;
                     LblLastEntryDate.Text = lastEntry.EasyDate.ToString() + " at " + lastEntry.EasyTime.ToString();
-                }
-            }
-        }
-
-        private void AddOrFetchUser()
-        {
-            using (var db = new AppDbContext())
-            {
-                if (db.User.Count() == 0)
-                {
-                    user = new User("test", "New", "User", "", "", "", "", DateTime.Today);
-                    db.User.Add(user);
-                    db.SaveChanges();
-                }
-                else
-                {
-                    user = db.User.First();
                 }
             }
         }

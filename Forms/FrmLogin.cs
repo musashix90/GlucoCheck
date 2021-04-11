@@ -7,14 +7,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using GlucoCheck.Classes;
+using BCrypt.Net;
 
 namespace GlucoCheck.Forms
 {
     public partial class FrmLogin : Form
     {
+        public User user { get; set; }
+
         public FrmLogin()
         {
             InitializeComponent();
+            using (var db = new AppDbContext())
+            {
+                var count = db.User.Count();
+            }
         }
 
         private void LoginButton_Click(object sender, EventArgs e)
@@ -23,9 +31,28 @@ namespace GlucoCheck.Forms
             var password = PasswordTextbox.Text;
             //TODO: retrieve user from database and check password
             var passwordCheck = true;
+            using (var db = new AppDbContext())
+            {
+                var loginUser = db.User.Where(l => l.UserName.Equals(username)).FirstOrDefault();
+                if (loginUser == null)
+                {
+                    passwordCheck = false;
+                } else
+                {
+                    if (BCrypt.Net.BCrypt.Verify(password, loginUser.Password))
+                    {
+                        passwordCheck = true;
+                        user = loginUser;
+                    }
+                    else
+                    {
+                        passwordCheck = false;
+                    }
+                }
+            }
             if (passwordCheck)
             {
-                //goto main form
+                DialogResult = DialogResult.OK;
             }
             else
             {
@@ -39,15 +66,34 @@ namespace GlucoCheck.Forms
             var password = PasswordTextbox.Text;
             //TODO: check if user already exists;
             var userExists = true;
+            using (var db = new AppDbContext())
+            {
+                if (db.User.Where(l => l.UserName.Equals(username)).FirstOrDefault() == null)
+                {
+                    userExists = false;
+                }
+                else
+                {
+                    userExists = true;
+                }
+            }
             if (userExists)
             {
                 UserExistsErrorLabel.Visible = true;
             }
             else
             {
-                Form form = new FrmRegister(username, password);
-                form.ShowDialog();
-                //TODO: close login
+                DialogResult result;
+                using (var form = new FrmRegister(username, password))
+                {
+                    result = form.ShowDialog();
+                    //TODO: close login
+                    if (result == DialogResult.OK)
+                    {
+                        user = form.user;
+                        DialogResult = DialogResult.OK;
+                    }
+                }
             }
         }
 
