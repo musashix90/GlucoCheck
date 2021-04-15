@@ -131,5 +131,36 @@ namespace GlucoCheck.Forms
             FrmFoodSearch frmFoodSearch = new FrmFoodSearch();
             frmFoodSearch.ShowDialog();
         }
+
+        // Button Mouse Hover events.
+        private void BtnNewEntry_MouseHover(object sender, EventArgs e)
+        {
+            lblInfo.Text = "*Create a new log entry to be added to your table.";
+        }
+
+        private void BtnViewGraph_MouseHover(object sender, EventArgs e)
+        {
+            lblInfo.Text = "*View a trend graph that tracks your progress.";
+        }
+
+        private void BtnViewLog_MouseHover(object sender, EventArgs e)
+        {
+            lblInfo.Text = "*View all your entries in a table format.";
+        }
+
+        private void SettingsBtn_MouseHover(object sender, EventArgs e)
+        {
+            lblInfo.Text = "*Edit your personalized application settings.";
+        }
+
+        private void BtnSearch_MouseHover(object sender, EventArgs e)
+        {
+            lblInfo.Text = "*Search for foods that are perfect for you.";
+        }
+
+        private void Buttons_MouseLeave(object sender, EventArgs e)
+        {
+            lblInfo.Text = "";
+        }
     }
 }
