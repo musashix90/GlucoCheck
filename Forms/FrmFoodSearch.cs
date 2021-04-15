@@ -21,33 +21,50 @@ namespace GlucoCheck.Forms
             request.AddHeader("content-type", "application/json");
             IRestResponse response = client.Execute(request);
             var jObject = JObject.Parse(response.Content);
+            tblOutput.RowCount = 1;
+            tblOutput.Controls.Clear();
+            tblOutput.RowStyles.Clear();
+            tblOutput.Controls.Add(new Label() { Text = "Description" }, 0, 0);
+            tblOutput.Controls.Add(new Label() { Text = "Carbyhydrates" }, 1, 0);
 
             try
             {
-                string totalHits = jObject.GetValue("totalHits").ToString();
+                int totalHits = int.Parse(jObject.GetValue("totalHits").ToString());
                 IList<JToken> foods = jObject["foods"].Children().ToList();
 
-                string firstFoodName = foods[0]["description"].ToString();
-                IList<JToken> nutrients = foods[0]["foodNutrients"].Children().ToList();
-                double carbs = 0.0;
-                foreach (JToken nutrient in nutrients)
+                for (int i = 0; i < totalHits; i++)
                 {
-                    if (nutrient["nutrientName"].ToString().Contains("Carbohydrate"))
+                    IList<JToken> nutrients = foods[i]["foodNutrients"].Children().ToList();
+                    double carbs = 0.0;
+                    foreach (JToken nutrient in nutrients)
                     {
-                        carbs = double.Parse(nutrient["value"].ToString());
+                        if (nutrient["nutrientName"].ToString().Contains("Carbohydrate"))
+                        {
+                            carbs = double.Parse(nutrient["value"].ToString());
+                        }
                     }
+                    tblOutput.RowCount++;
+                    tblOutput.Controls.Add(new Label() { Text = foods[i]["description"].ToString() }, 0, i+1);
+                    tblOutput.Controls.Add(new Label() { Text = carbs.ToString() }, 1, i+1);
+                    
+                    //LblResult.Text = "Name: " + foods[i]["description"].ToString() + "\nCarbs: " + carbs.ToString();
                 }
-                LblResult.Text = "Name: " + firstFoodName + "\nCarbs: " + carbs.ToString();
+
             }
             catch (Exception ex)
             {
                 LblResult.Text = ex.ToString();
-            }           
+            }
         }
 
         private void BtnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void FrmFoodSearch_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
