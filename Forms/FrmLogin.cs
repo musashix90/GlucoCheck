@@ -52,6 +52,19 @@ namespace GlucoCheck.Forms
             }
             if (passwordCheck)
             {
+                //Handle remeber login check
+                if (cBoxRemember.Checked)
+                {
+                    Properties.Settings.Default.userName = username;
+                    Properties.Settings.Default.userPass = password;
+                    Properties.Settings.Default.Save();
+                }
+                else
+                {
+                    Properties.Settings.Default.userName = "";
+                    Properties.Settings.Default.userPass = "";
+                    Properties.Settings.Default.Save();
+                }
                 DialogResult = DialogResult.OK;
             }
             else
@@ -107,6 +120,16 @@ namespace GlucoCheck.Forms
         {
             ErrorLabel.Visible = false;
             UserExistsErrorLabel.Visible = false;
+        }
+
+        private void FrmLogin_Load(object sender, EventArgs e)
+        {
+            if(Properties.Settings.Default.userName != "")
+            {
+                cBoxRemember.Checked = true;
+            }
+            UsernameTextbox.Text = Properties.Settings.Default.userName;
+            PasswordTextbox.Text = Properties.Settings.Default.userPass;
         }
     }
 }
