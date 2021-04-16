@@ -55,57 +55,57 @@ namespace GlucoCheck.Forms
             // 
             // HighThresholdTextBox
             // 
-            this.HighThresholdTextBox.Location = new System.Drawing.Point(85, 75);
-            this.HighThresholdTextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.HighThresholdTextBox.Location = new System.Drawing.Point(42, 39);
+            this.HighThresholdTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.HighThresholdTextBox.Name = "HighThresholdTextBox";
-            this.HighThresholdTextBox.Size = new System.Drawing.Size(132, 31);
+            this.HighThresholdTextBox.Size = new System.Drawing.Size(68, 20);
             this.HighThresholdTextBox.TabIndex = 0;
             // 
             // HighThresholdLabel
             // 
             this.HighThresholdLabel.AutoSize = true;
-            this.HighThresholdLabel.Location = new System.Drawing.Point(16, 79);
-            this.HighThresholdLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.HighThresholdLabel.Location = new System.Drawing.Point(8, 41);
+            this.HighThresholdLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.HighThresholdLabel.Name = "HighThresholdLabel";
-            this.HighThresholdLabel.Size = new System.Drawing.Size(62, 25);
+            this.HighThresholdLabel.Size = new System.Drawing.Size(32, 13);
             this.HighThresholdLabel.TabIndex = 1;
             this.HighThresholdLabel.Text = "High:";
             // 
             // LowThresholdTextBox
             // 
-            this.LowThresholdTextBox.Location = new System.Drawing.Point(359, 75);
-            this.LowThresholdTextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.LowThresholdTextBox.Location = new System.Drawing.Point(180, 39);
+            this.LowThresholdTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.LowThresholdTextBox.Name = "LowThresholdTextBox";
-            this.LowThresholdTextBox.Size = new System.Drawing.Size(132, 31);
+            this.LowThresholdTextBox.Size = new System.Drawing.Size(68, 20);
             this.LowThresholdTextBox.TabIndex = 2;
             // 
             // LowThresholdLabel
             // 
             this.LowThresholdLabel.AutoSize = true;
-            this.LowThresholdLabel.Location = new System.Drawing.Point(295, 79);
-            this.LowThresholdLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LowThresholdLabel.Location = new System.Drawing.Point(148, 41);
+            this.LowThresholdLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LowThresholdLabel.Name = "LowThresholdLabel";
-            this.LowThresholdLabel.Size = new System.Drawing.Size(57, 25);
+            this.LowThresholdLabel.Size = new System.Drawing.Size(30, 13);
             this.LowThresholdLabel.TabIndex = 4;
             this.LowThresholdLabel.Text = "Low:";
             // 
             // ThresholdSectionLabel
             // 
             this.ThresholdSectionLabel.AutoSize = true;
-            this.ThresholdSectionLabel.Location = new System.Drawing.Point(16, 34);
-            this.ThresholdSectionLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.ThresholdSectionLabel.Location = new System.Drawing.Point(8, 18);
+            this.ThresholdSectionLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.ThresholdSectionLabel.Name = "ThresholdSectionLabel";
-            this.ThresholdSectionLabel.Size = new System.Drawing.Size(301, 25);
+            this.ThresholdSectionLabel.Size = new System.Drawing.Size(149, 13);
             this.ThresholdSectionLabel.TabIndex = 5;
             this.ThresholdSectionLabel.Text = "Blood Sugar Level Thresholds";
             // 
             // MmolButton
             // 
             this.MmolButton.AutoSize = true;
-            this.MmolButton.Location = new System.Drawing.Point(8, 50);
-            this.MmolButton.Margin = new System.Windows.Forms.Padding(4);
+            this.MmolButton.Location = new System.Drawing.Point(4, 26);
+            this.MmolButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MmolButton.Name = "MmolButton";
-            this.MmolButton.Size = new System.Drawing.Size(305, 29);
+            this.MmolButton.Size = new System.Drawing.Size(150, 17);
             this.MmolButton.TabIndex = 7;
             this.MmolButton.TabStop = true;
             this.MmolButton.Text = "Millimoles per liter (mmol/L)";
@@ -116,11 +116,11 @@ namespace GlucoCheck.Forms
             // 
             this.MeasurementGroupBox.Controls.Add(this.MgButton);
             this.MeasurementGroupBox.Controls.Add(this.MmolButton);
-            this.MeasurementGroupBox.Location = new System.Drawing.Point(21, 164);
-            this.MeasurementGroupBox.Margin = new System.Windows.Forms.Padding(4);
+            this.MeasurementGroupBox.Location = new System.Drawing.Point(10, 85);
+            this.MeasurementGroupBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MeasurementGroupBox.Name = "MeasurementGroupBox";
-            this.MeasurementGroupBox.Padding = new System.Windows.Forms.Padding(4);
-            this.MeasurementGroupBox.Size = new System.Drawing.Size(368, 129);
+            this.MeasurementGroupBox.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MeasurementGroupBox.Size = new System.Drawing.Size(184, 67);
             this.MeasurementGroupBox.TabIndex = 8;
             this.MeasurementGroupBox.TabStop = false;
             this.MeasurementGroupBox.Text = "Unit of Measurement";
@@ -128,10 +128,10 @@ namespace GlucoCheck.Forms
             // MgButton
             // 
             this.MgButton.AutoSize = true;
-            this.MgButton.Location = new System.Drawing.Point(8, 88);
-            this.MgButton.Margin = new System.Windows.Forms.Padding(4);
+            this.MgButton.Location = new System.Drawing.Point(4, 46);
+            this.MgButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MgButton.Name = "MgButton";
-            this.MgButton.Size = new System.Drawing.Size(337, 29);
+            this.MgButton.Size = new System.Drawing.Size(167, 17);
             this.MgButton.TabIndex = 9;
             this.MgButton.TabStop = true;
             this.MgButton.Text = "Milligrams per deciliter (mg/dL)";
@@ -142,41 +142,41 @@ namespace GlucoCheck.Forms
             // 
             this.StartTimePicker.CustomFormat = "hh:mm tt";
             this.StartTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.StartTimePicker.Location = new System.Drawing.Point(85, 370);
-            this.StartTimePicker.Margin = new System.Windows.Forms.Padding(4);
+            this.StartTimePicker.Location = new System.Drawing.Point(42, 192);
+            this.StartTimePicker.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.StartTimePicker.Name = "StartTimePicker";
             this.StartTimePicker.ShowUpDown = true;
-            this.StartTimePicker.Size = new System.Drawing.Size(183, 31);
+            this.StartTimePicker.Size = new System.Drawing.Size(94, 20);
             this.StartTimePicker.TabIndex = 9;
             this.StartTimePicker.MouseDown += new System.Windows.Forms.MouseEventHandler(this.StartTimePicker_MouseDown);
             // 
             // ActiveHoursLabel
             // 
             this.ActiveHoursLabel.AutoSize = true;
-            this.ActiveHoursLabel.Location = new System.Drawing.Point(16, 329);
-            this.ActiveHoursLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.ActiveHoursLabel.Location = new System.Drawing.Point(8, 171);
+            this.ActiveHoursLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.ActiveHoursLabel.Name = "ActiveHoursLabel";
-            this.ActiveHoursLabel.Size = new System.Drawing.Size(134, 25);
+            this.ActiveHoursLabel.Size = new System.Drawing.Size(68, 13);
             this.ActiveHoursLabel.TabIndex = 10;
             this.ActiveHoursLabel.Text = "Active Hours";
             // 
             // StartTimeLabel
             // 
             this.StartTimeLabel.AutoSize = true;
-            this.StartTimeLabel.Location = new System.Drawing.Point(16, 376);
-            this.StartTimeLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.StartTimeLabel.Location = new System.Drawing.Point(8, 196);
+            this.StartTimeLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.StartTimeLabel.Name = "StartTimeLabel";
-            this.StartTimeLabel.Size = new System.Drawing.Size(63, 25);
+            this.StartTimeLabel.Size = new System.Drawing.Size(32, 13);
             this.StartTimeLabel.TabIndex = 11;
             this.StartTimeLabel.Text = "Start:";
             // 
             // EndTimeLabel
             // 
             this.EndTimeLabel.AutoSize = true;
-            this.EndTimeLabel.Location = new System.Drawing.Point(295, 376);
-            this.EndTimeLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.EndTimeLabel.Location = new System.Drawing.Point(148, 196);
+            this.EndTimeLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.EndTimeLabel.Name = "EndTimeLabel";
-            this.EndTimeLabel.Size = new System.Drawing.Size(56, 25);
+            this.EndTimeLabel.Size = new System.Drawing.Size(29, 13);
             this.EndTimeLabel.TabIndex = 12;
             this.EndTimeLabel.Text = "End:";
             // 
@@ -184,76 +184,76 @@ namespace GlucoCheck.Forms
             // 
             this.EndTimePicker.CustomFormat = "hh:mm tt";
             this.EndTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.EndTimePicker.Location = new System.Drawing.Point(359, 369);
-            this.EndTimePicker.Margin = new System.Windows.Forms.Padding(4);
+            this.EndTimePicker.Location = new System.Drawing.Point(180, 192);
+            this.EndTimePicker.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.EndTimePicker.Name = "EndTimePicker";
             this.EndTimePicker.ShowUpDown = true;
-            this.EndTimePicker.Size = new System.Drawing.Size(191, 31);
+            this.EndTimePicker.Size = new System.Drawing.Size(98, 20);
             this.EndTimePicker.TabIndex = 13;
             this.EndTimePicker.MouseDown += new System.Windows.Forms.MouseEventHandler(this.EndTimePicker_MouseDown);
             // 
             // RemindersLabel
             // 
             this.RemindersLabel.AutoSize = true;
-            this.RemindersLabel.Location = new System.Drawing.Point(16, 452);
-            this.RemindersLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.RemindersLabel.Location = new System.Drawing.Point(8, 235);
+            this.RemindersLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.RemindersLabel.Name = "RemindersLabel";
-            this.RemindersLabel.Size = new System.Drawing.Size(115, 25);
+            this.RemindersLabel.Size = new System.Drawing.Size(57, 13);
             this.RemindersLabel.TabIndex = 14;
             this.RemindersLabel.Text = "Reminders";
             // 
             // DailyReminderLabel
             // 
             this.DailyReminderLabel.AutoSize = true;
-            this.DailyReminderLabel.Location = new System.Drawing.Point(16, 495);
-            this.DailyReminderLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.DailyReminderLabel.Location = new System.Drawing.Point(8, 257);
+            this.DailyReminderLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.DailyReminderLabel.Name = "DailyReminderLabel";
-            this.DailyReminderLabel.Size = new System.Drawing.Size(411, 25);
+            this.DailyReminderLabel.Size = new System.Drawing.Size(203, 13);
             this.DailyReminderLabel.TabIndex = 15;
             this.DailyReminderLabel.Text = "Hours Elapsed Between Daily Reminders:";
             // 
             // SecondEntryReminder
             // 
             this.SecondEntryReminder.AutoSize = true;
-            this.SecondEntryReminder.Location = new System.Drawing.Point(16, 532);
-            this.SecondEntryReminder.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.SecondEntryReminder.Location = new System.Drawing.Point(8, 277);
+            this.SecondEntryReminder.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.SecondEntryReminder.Name = "SecondEntryReminder";
-            this.SecondEntryReminder.Size = new System.Drawing.Size(503, 25);
+            this.SecondEntryReminder.Size = new System.Drawing.Size(250, 13);
             this.SecondEntryReminder.TabIndex = 16;
             this.SecondEntryReminder.Text = "Hours Elapsed Between First and Second Reading:";
             // 
             // DailyReminderUpDown
             // 
-            this.DailyReminderUpDown.Location = new System.Drawing.Point(429, 492);
-            this.DailyReminderUpDown.Margin = new System.Windows.Forms.Padding(4);
+            this.DailyReminderUpDown.Location = new System.Drawing.Point(214, 256);
+            this.DailyReminderUpDown.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.DailyReminderUpDown.Maximum = new decimal(new int[] {
             24,
             0,
             0,
             0});
             this.DailyReminderUpDown.Name = "DailyReminderUpDown";
-            this.DailyReminderUpDown.Size = new System.Drawing.Size(75, 31);
+            this.DailyReminderUpDown.Size = new System.Drawing.Size(38, 20);
             this.DailyReminderUpDown.TabIndex = 17;
             // 
             // SecondReminderUpDown
             // 
-            this.SecondReminderUpDown.Location = new System.Drawing.Point(523, 530);
-            this.SecondReminderUpDown.Margin = new System.Windows.Forms.Padding(4);
+            this.SecondReminderUpDown.Location = new System.Drawing.Point(262, 276);
+            this.SecondReminderUpDown.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.SecondReminderUpDown.Maximum = new decimal(new int[] {
             24,
             0,
             0,
             0});
             this.SecondReminderUpDown.Name = "SecondReminderUpDown";
-            this.SecondReminderUpDown.Size = new System.Drawing.Size(75, 31);
+            this.SecondReminderUpDown.Size = new System.Drawing.Size(38, 20);
             this.SecondReminderUpDown.TabIndex = 18;
             // 
             // SaveBtn
             // 
-            this.SaveBtn.Location = new System.Drawing.Point(21, 598);
-            this.SaveBtn.Margin = new System.Windows.Forms.Padding(4);
+            this.SaveBtn.Location = new System.Drawing.Point(10, 311);
+            this.SaveBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.SaveBtn.Name = "SaveBtn";
-            this.SaveBtn.Size = new System.Drawing.Size(265, 51);
+            this.SaveBtn.Size = new System.Drawing.Size(132, 27);
             this.SaveBtn.TabIndex = 19;
             this.SaveBtn.Text = "Save";
             this.SaveBtn.UseVisualStyleBackColor = true;
@@ -261,9 +261,9 @@ namespace GlucoCheck.Forms
             // 
             // FrmSettings
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 675);
+            this.ClientSize = new System.Drawing.Size(534, 351);
             this.Controls.Add(this.SaveBtn);
             this.Controls.Add(this.SecondReminderUpDown);
             this.Controls.Add(this.DailyReminderUpDown);
@@ -281,7 +281,8 @@ namespace GlucoCheck.Forms
             this.Controls.Add(this.LowThresholdTextBox);
             this.Controls.Add(this.HighThresholdLabel);
             this.Controls.Add(this.HighThresholdTextBox);
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MaximizeBox = false;
             this.Name = "FrmSettings";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;

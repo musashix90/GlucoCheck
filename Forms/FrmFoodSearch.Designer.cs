@@ -110,6 +110,7 @@ namespace GlucoCheck.Forms
             this.Controls.Add(this.label1);
             this.Controls.Add(this.TxtSearch);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "FrmFoodSearch";
             this.ShowIcon = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;

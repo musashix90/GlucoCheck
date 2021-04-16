@@ -106,6 +106,8 @@ namespace GlucoCheck.Forms
                 db.SaveChanges();
             }
             settings = editedSettings;
+
+            MessageBox.Show("Settings saved");
         }
 
         private void StartTimePicker_MouseDown(object sender, MouseEventArgs e)
