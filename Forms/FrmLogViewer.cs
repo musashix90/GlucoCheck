@@ -88,16 +88,25 @@ namespace GlucoCheck.Forms
                 string desktopPath = Environment.
                     GetFolderPath(Environment.SpecialFolder.Desktop);
 
-                GCUtility.LogToHTMLDoc(entries.ToArray(), 
-                    desktopPath + "\\BSL log.html");
+                //Get the current time as a string a reformat it (used as part
+                //of the file name).
+                string DTNow = DateTime.Now.ToString();
+                DTNow = DTNow.Replace("/", "-");
+                DTNow = DTNow.Replace(":", ".");
 
-                //Display pop-up to user
+                //Create the file path.
+                string filePath = 
+                    desktopPath + "\\BSL log (" + DTNow + ").html";
+
+                GCUtility.LogToHTMLDoc(entries.ToArray(), filePath);
+
+                //Display pop-up to user.
                 MessageBox.Show("An HTML document of your log has been " +
                     "created on your desktop. It will automatically be " +
                     "opened so that you may print it.");
 
                 //Open the HTML doc so the user can print it.
-                Process.Start(desktopPath + "\\BSL log.html");
+                Process.Start(filePath);
             }
         }
 
