@@ -8,7 +8,8 @@ namespace GlucoCheck.Forms
     {
         #region Variables
 
-        private LogEntry originalEntry = null;
+        public LogEntry originalEntry;
+        public int Id;
 
         #endregion
 
@@ -19,19 +20,18 @@ namespace GlucoCheck.Forms
             InitializeComponent();
         }
 
-        public FrmEditEntry(LogEntry originalEntry)
-        {
-            InitializeComponent();
-
-            this.originalEntry = originalEntry;
-        }
-
         #endregion
 
         #region Events
 
         private void FrmEditEntry_Load(object sender, EventArgs e)
         {
+            using (var db = new AppDbContext())
+            {
+                //Filter the log entires by the from and to dates.
+                originalEntry = db.Log.Find(Id);
+            }
+
             DTPEntryDate.MaxDate = DateTime.Today;
 
             if (originalEntry != null)
@@ -45,15 +45,17 @@ namespace GlucoCheck.Forms
 
         private void BtnSave_Click(object sender, EventArgs e)
         {
-            LogEntry editedEntry = new LogEntry()
+            using (var db = new AppDbContext())
             {
-                BSL = (int)NumUpDownBSL.Value,
-                Carbs = (int)NumUpDownCarbs.Value,
-                InsulinDosed = (float)NumUpDownInsulinDosed.Value,
-                EntryDate = DTPEntryDate.Value
-            };
+                originalEntry.BSL = (int)NumUpDownBSL.Value;
+                originalEntry.Carbs = (int)NumUpDownCarbs.Value;
+                originalEntry.InsulinDosed = (float)NumUpDownInsulinDosed.Value;
+                originalEntry.EntryDate = DTPEntryDate.Value;
 
-            //To do: add code that updates the entry on the DB.
+                db.Log.Attach(originalEntry);
+                db.Entry(originalEntry).State = System.Data.Entity.EntityState.Modified;
+                db.SaveChanges();
+            }
         }
 
         private void BtnCancel_Click(object sender, EventArgs e)

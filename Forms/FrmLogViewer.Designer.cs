@@ -63,9 +63,11 @@
             this.DGVLogEntries.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DGVLogEntries.Location = new System.Drawing.Point(0, 0);
             this.DGVLogEntries.Name = "DGVLogEntries";
+            this.DGVLogEntries.ReadOnly = true;
             this.DGVLogEntries.RowHeadersWidth = 82;
             this.DGVLogEntries.Size = new System.Drawing.Size(517, 456);
             this.DGVLogEntries.TabIndex = 0;
+            this.DGVLogEntries.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVLogEntries_CellDoubleClick);
             // 
             // DTPFrom
             // 

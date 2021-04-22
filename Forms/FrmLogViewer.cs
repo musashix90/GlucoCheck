@@ -200,5 +200,13 @@ namespace GlucoCheck.Forms
         }
 
         #endregion
+
+        private void DGVLogEntries_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            FrmEditEntry frmEdit = new FrmEditEntry();
+            frmEdit.Id = Int32.Parse(DGVLogEntries.Rows[e.RowIndex].Cells[0].Value.ToString());
+            frmEdit.ShowDialog();
+            FilterLog();
+        }
     }
 }
