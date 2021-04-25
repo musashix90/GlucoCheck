@@ -46,8 +46,8 @@ namespace GlucoCheck.Forms
                     tblOutput.RowCount++;
                     tblOutput.Controls.Add(new Label() { Text = foods[i]["description"].ToString() }, 0, i+1);
                     tblOutput.Controls.Add(new Label() { Text = carbs.ToString() }, 1, i+1);
-                    
-                    //LblResult.Text = "Name: " + foods[i]["description"].ToString() + "\nCarbs: " + carbs.ToString();
+
+                    if (i == 11) break; // Limits the number of searches to 12 to help improve performance of the food search function.
                 }
 
             }
