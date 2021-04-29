@@ -34,6 +34,7 @@
             this.Lbl3 = new System.Windows.Forms.Label();
             this.DTPTo = new System.Windows.Forms.DateTimePicker();
             this.SplContainerMain = new System.Windows.Forms.SplitContainer();
+            this.BtnPrintLog = new System.Windows.Forms.Button();
             this.NumUDInsulinValue = new System.Windows.Forms.NumericUpDown();
             this.ComboxInsulinFilter = new System.Windows.Forms.ComboBox();
             this.Lbl6 = new System.Windows.Forms.Label();
@@ -46,7 +47,6 @@
             this.ComboxBSLFilter = new System.Windows.Forms.ComboBox();
             this.Lbl4 = new System.Windows.Forms.Label();
             this.Lbl1 = new System.Windows.Forms.Label();
-            this.BtnPrintLog = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DGVLogEntries)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SplContainerMain)).BeginInit();
             this.SplContainerMain.Panel1.SuspendLayout();
@@ -64,6 +64,7 @@
             this.DGVLogEntries.Location = new System.Drawing.Point(0, 0);
             this.DGVLogEntries.Name = "DGVLogEntries";
             this.DGVLogEntries.ReadOnly = true;
+            this.DGVLogEntries.RowHeadersVisible = false;
             this.DGVLogEntries.RowHeadersWidth = 82;
             this.DGVLogEntries.Size = new System.Drawing.Size(517, 456);
             this.DGVLogEntries.TabIndex = 0;
@@ -136,6 +137,17 @@
             this.SplContainerMain.Size = new System.Drawing.Size(784, 458);
             this.SplContainerMain.SplitterDistance = 261;
             this.SplContainerMain.TabIndex = 6;
+            // 
+            // BtnPrintLog
+            // 
+            this.BtnPrintLog.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnPrintLog.Location = new System.Drawing.Point(16, 420);
+            this.BtnPrintLog.Name = "BtnPrintLog";
+            this.BtnPrintLog.Size = new System.Drawing.Size(224, 25);
+            this.BtnPrintLog.TabIndex = 18;
+            this.BtnPrintLog.Text = "Print log";
+            this.BtnPrintLog.UseVisualStyleBackColor = true;
+            this.BtnPrintLog.Click += new System.EventHandler(this.BtnPrintLog_Click);
             // 
             // NumUDInsulinValue
             // 
@@ -293,17 +305,6 @@
             this.Lbl1.Size = new System.Drawing.Size(100, 20);
             this.Lbl1.TabIndex = 6;
             this.Lbl1.Text = "Filter options";
-            // 
-            // BtnPrintLog
-            // 
-            this.BtnPrintLog.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnPrintLog.Location = new System.Drawing.Point(16, 420);
-            this.BtnPrintLog.Name = "BtnPrintLog";
-            this.BtnPrintLog.Size = new System.Drawing.Size(224, 25);
-            this.BtnPrintLog.TabIndex = 18;
-            this.BtnPrintLog.Text = "Print log";
-            this.BtnPrintLog.UseVisualStyleBackColor = true;
-            this.BtnPrintLog.Click += new System.EventHandler(this.BtnPrintLog_Click);
             // 
             // FrmLogViewer
             // 
