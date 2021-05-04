@@ -69,6 +69,12 @@ namespace GlucoCheck.Forms
             this.Close();
         }
 
+        private void BtnSearchFoods_Click(object sender, EventArgs e)
+        {
+            FrmFoodSearch frmFoodSearch = new FrmFoodSearch();
+            frmFoodSearch.ShowDialog();
+        }
+
         #endregion
 
         #region Functions
