@@ -37,6 +37,7 @@ namespace GlucoCheck.Forms
 
         private void BtnAdd_Click(object sender, EventArgs e)
         {
+            //Create a new entry object from the data given in the form.
             LogEntry entry = new LogEntry()
             {
                 BSL = (int)NumUpDownCurrentBSL.Value,
@@ -71,6 +72,7 @@ namespace GlucoCheck.Forms
 
         private void BtnSearchFoods_Click(object sender, EventArgs e)
         {
+            //Open a food search form.
             FrmFoodSearch frmFoodSearch = new FrmFoodSearch();
             frmFoodSearch.ShowDialog();
         }
